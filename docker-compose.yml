@@ -119,6 +119,9 @@ services:
       - REDIS_URL=redis://redis:6379/0
       - RAG_SERVICE_URL=http://rag:8082
       - INTERNAL_API_URL=http://apiserver:8000
+      # CozeLoop Tracing (optional - get credentials from https://loop.coze.cn)
+      - COZELOOP_WORKSPACE_ID=${COZELOOP_WORKSPACE_ID:-}
+      - COZELOOP_API_TOKEN=${COZELOOP_API_TOKEN:-}
     depends_on:
       postgres:
         condition: service_healthy

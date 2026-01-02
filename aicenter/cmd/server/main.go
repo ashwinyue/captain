@@ -14,9 +14,16 @@ import (
 	"github.com/tgo/captain/aicenter/internal/pkg/db"
 	"github.com/tgo/captain/aicenter/internal/service"
 	"github.com/tgo/captain/aicenter/internal/task"
+	"github.com/tgo/captain/aicenter/internal/trace"
 )
 
 func main() {
+	ctx := context.Background()
+
+	// Initialize CozeLoop tracing (if configured)
+	closeTrace := trace.InitCozeLoop(ctx)
+	defer closeTrace(ctx)
+
 	// Load config
 	cfg, err := config.Load()
 	if err != nil {
