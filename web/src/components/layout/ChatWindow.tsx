@@ -232,6 +232,7 @@ const ChatWindow: React.FC<ChatWindowProps> = React.memo(({ activeChat, onSendMe
             showApiError(showToast, e);
             setIsSending(false);
           }
+          setIsSending(false); // Ensure state is reset after successful streaming
           return;
         }
 
