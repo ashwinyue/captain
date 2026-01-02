@@ -138,96 +138,36 @@ const ChatWindow: React.FC<ChatWindowProps> = React.memo(({ activeChat, onSendMe
           timestamp: Date.now(),
         };
 
-        // Agent/Team chat: use streaming API for real-time AI responses
+        // Agent/Team chat: use REST API for AI responses
         if (isAIChat) {
-          // Add user message to UI immediately
-          const userMsgId = `user-${Date.now()}`;
-          const userMessage: Message = {
-            id: userMsgId,
-            type: 'staff',
-            content: message.trim(),
-            timestamp: new Date().toISOString(),
-            messageId: userMsgId,
-            clientMsgNo: userMsgId,
-            messageSeq: 0,
-            fromUid: user?.id ? `${user.id}-staff` : 'unknown-staff',
-            channelId,
-            channelType,
-            payloadType: 1 as any,
-            metadata: { isLocal: true },
-          };
-          addMessage(userMessage);
-
-          // Create AI response message placeholder
-          const aiMsgId = `ai-${Date.now()}`;
-          const aiMessage: Message = {
-            id: aiMsgId,
-            type: 'visitor', // Use 'visitor' for AI messages (shows on left side)
-            content: '',
-            timestamp: new Date().toISOString(),
-            messageId: aiMsgId,
-            clientMsgNo: aiMsgId,
-            messageSeq: 0,
-            fromUid: channelId,
-            channelId,
-            channelType,
-            payloadType: 1 as any,
-            metadata: { is_streaming: true },
-          };
-          addMessage(aiMessage);
-
           try {
-            const requestData = isAgentChat
-              ? { agent_id: channelId.replace(/-agent$/, ''), message: message.trim() }
-              : { team_id: channelId.replace(/-team$/, ''), message: message.trim() };
-
-            let streamContent = '';
-
-            await chatMessagesApiService.staffTeamChatStream(
-              requestData,
-              // onEvent - update message content progressively
-              (event) => {
-                if (event.type === 'message' && event.content) {
-                  streamContent += event.content;
-                  updateMessageByClientMsgNo(aiMsgId, { content: streamContent, metadata: { is_streaming: true } });
-                } else if (event.type === 'exit' && event.content) {
-                  // Final content from supervisor
-                  updateMessageByClientMsgNo(aiMsgId, { 
-                    content: event.content,
-                    metadata: { is_streaming: false }
-                  });
-                }
-              },
-              // onComplete
-              (finalContent) => {
-                console.log('📝 onComplete called, finalContent:', finalContent?.substring(0, 50));
-                console.log('📝 Updating message:', aiMsgId, 'with is_streaming: false');
-                updateMessageByClientMsgNo(aiMsgId, { 
-                  content: finalContent || streamContent,
-                  metadata: { is_streaming: false }
-                });
-                setIsSending(false);
-                console.log('🤖 AI Chat: Streaming completed, isSending set to false');
-              },
-              // onError
-              (error) => {
-                console.error('AI Chat streaming error:', error);
-                updateMessageByClientMsgNo(aiMsgId, { 
-                  content: t('chat.send.aiError', 'AI 响应失败，请重试'),
-                  metadata: { is_streaming: false, error: 'AI response failed' }
-                });
-                setIsSending(false);
-              }
-            );
+            let response;
+            if (isAgentChat) {
+              // Extract agent_id from channelId (format: {agent_id}-agent)
+              const agentId = channelId.replace(/-agent$/, '');
+              response = await chatMessagesApiService.staffTeamChat({
+                agent_id: agentId,
+                message: message.trim(),
+              });
+            } else {
+              // Extract team_id from channelId (format: {team_id}-team)
+              const teamId = channelId.replace(/-team$/, '');
+              response = await chatMessagesApiService.staffTeamChat({
+                team_id: teamId,
+                message: message.trim(),
+              });
+            }
+            console.log('🤖 AI Chat: Message sent successfully via REST API', {
+              channelId,
+              clientMsgNo: response.client_msg_no
+            });
             onSendMessage?.(message);
           } catch (e: any) {
             const errorKey = isAgentChat ? 'chat.send.agentErrorLog' : 'chat.send.teamErrorLog';
             const errorDefault = isAgentChat ? 'AI员工消息发送失败' : '团队消息发送失败';
             console.error(t(errorKey, errorDefault), e);
             showApiError(showToast, e);
-            setIsSending(false);
           }
-          setIsSending(false); // Ensure state is reset after successful streaming
           return;
         }
 
