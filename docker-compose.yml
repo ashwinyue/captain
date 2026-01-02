@@ -201,42 +201,6 @@ services:
       - captain-network
     restart: unless-stopped
 
-  # ============================================
-  # Admin Tools
-  # ============================================
-
-  # Adminer - Database admin UI
-  adminer:
-    image: adminer:latest
-    container_name: captain-adminer
-    ports:
-      - "8888:8080"
-    environment:
-      - ADMINER_DEFAULT_SERVER=postgres
-      - ADMINER_DESIGN=pepa-linha-dark
-      - ADMINER_PLUGINS=tables-filter tinymce
-    depends_on:
-      postgres:
-        condition: service_healthy
-    networks:
-      - captain-network
-    restart: unless-stopped
-
-  # Redis Commander - Redis admin UI
-  redis-commander:
-    image: rediscommander/redis-commander:latest
-    container_name: captain-redis-commander
-    ports:
-      - "8889:8081"
-    environment:
-      - REDIS_HOSTS=local:redis:6379
-    depends_on:
-      redis:
-        condition: service_healthy
-    networks:
-      - captain-network
-    restart: unless-stopped
-
   # Widget App - Visitor chat widget
   widget:
     build:

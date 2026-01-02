@@ -29,11 +29,19 @@ export interface StaffTeamChatResponse {
   client_msg_no: string; // Message correlation ID for tracking
 }
 
+// SSE Event types from aicenter
+export interface SSEEvent {
+  type?: string;
+  agent_name?: string;
+  content?: string;
+}
+
 class ChatMessagesApiService extends BaseApiService {
   protected readonly apiVersion = 'v1';
   protected readonly endpoints = {
     sendPlatformMessage: '/v1/chat/messages/send',
     teamChat: '/v1/chat/team',
+    teamChatStream: '/v1/chat/team/stream',
   } as const;
 
   /**
@@ -56,6 +64,80 @@ class ChatMessagesApiService extends BaseApiService {
     data: StaffTeamChatRequest
   ): Promise<StaffTeamChatResponse> {
     return this.post<StaffTeamChatResponse>(this.endpoints.teamChat, data);
+  }
+
+  /**
+   * Staff chat with AI team or agent (streaming).
+   * This endpoint returns SSE stream for real-time AI responses.
+   * @param data Request data
+   * @param onEvent Callback for each SSE event
+   * @param onComplete Callback when stream completes
+   * @param onError Callback for errors
+   */
+  async staffTeamChatStream(
+    data: StaffTeamChatRequest,
+    onEvent: (event: SSEEvent) => void,
+    onComplete?: (finalContent: string) => void,
+    onError?: (error: Error) => void
+  ): Promise<void> {
+    const token = localStorage.getItem('token');
+    // Use runtime config (window.ENV) with fallback to build-time config
+    const baseUrl = (window as any).ENV?.VITE_API_BASE_URL || import.meta.env.VITE_API_BASE_URL || '';
+    
+    try {
+      const response = await fetch(`${baseUrl}${this.endpoints.teamChatStream}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': token ? `Bearer ${token}` : '',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const reader = response.body?.getReader();
+      if (!reader) {
+        throw new Error('No response body');
+      }
+
+      const decoder = new TextDecoder();
+      let buffer = '';
+      let finalContent = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || '';
+
+        for (const line of lines) {
+          if (line.startsWith('data:')) {
+            const jsonStr = line.slice(5).trim();
+            if (jsonStr && jsonStr !== '') {
+              try {
+                const event = JSON.parse(jsonStr) as SSEEvent;
+                onEvent(event);
+                // Collect exit content as final response
+                if (event.type === 'exit' && event.content) {
+                  finalContent = event.content;
+                }
+              } catch (e) {
+                console.warn('Failed to parse SSE event:', jsonStr);
+              }
+            }
+          }
+        }
+      }
+
+      onComplete?.(finalContent);
+    } catch (error) {
+      onError?.(error as Error);
+    }
   }
 }
 
