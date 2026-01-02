@@ -2,9 +2,9 @@
 
 本项目遵循 [Semantic Versioning](https://semver.org/lang/zh-CN/) 规范。
 
-## [v1.0.0] - 2026-01-02
+## [v0.1.0] - 2026-01-02
 
-### 首个版本发布
+### 初始版本
 
 基于 [TGO](https://github.com/tgoai/tgo) 开源项目使用 Go 语言重构的智能客服平台。
 
@@ -63,4 +63,4 @@
 
 ---
 
-[v1.0.0]: https://github.com/ashwinyue/captain/releases/tag/v1.0.0
+[v0.1.0]: https://github.com/ashwinyue/captain/releases/tag/v0.1.0
