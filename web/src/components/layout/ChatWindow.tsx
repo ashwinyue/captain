@@ -200,19 +200,14 @@ const ChatWindow: React.FC<ChatWindowProps> = React.memo(({ activeChat, onSendMe
               },
               // onComplete
               (finalContent) => {
-                if (finalContent) {
-                  updateMessageByClientMsgNo(aiMsgId, { 
-                    content: finalContent,
-                    metadata: { is_streaming: false }
-                  });
-                } else {
-                  // Ensure is_streaming is set to false even without finalContent
-                  updateMessageByClientMsgNo(aiMsgId, { 
-                    metadata: { is_streaming: false }
-                  });
-                }
+                console.log('📝 onComplete called, finalContent:', finalContent?.substring(0, 50));
+                console.log('📝 Updating message:', aiMsgId, 'with is_streaming: false');
+                updateMessageByClientMsgNo(aiMsgId, { 
+                  content: finalContent || streamContent,
+                  metadata: { is_streaming: false }
+                });
                 setIsSending(false);
-                console.log('🤖 AI Chat: Streaming completed');
+                console.log('🤖 AI Chat: Streaming completed, isSending set to false');
               },
               // onError
               (error) => {
