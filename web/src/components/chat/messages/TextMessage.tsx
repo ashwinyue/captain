@@ -40,7 +40,8 @@ const TextMessage: React.FC<MessageComponentProps> = ({ message, isStaff, onSend
   const shouldRenderMarkdown = hasStreamData;
 
   // Check if message is still streaming (AI response in progress)
-  const isStreaming = Boolean(message.metadata?.is_streaming);
+  // Only show streaming cursor if is_streaming is true AND content is empty or very short
+  const isStreaming = Boolean(message.metadata?.is_streaming) && (!textContent || textContent.length < 3);
 
   const hasLink = (message as any).hasLink;
 
