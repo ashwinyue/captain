@@ -162,7 +162,7 @@ const ChatWindow: React.FC<ChatWindowProps> = React.memo(({ activeChat, onSendMe
           const aiMsgId = `ai-${Date.now()}`;
           const aiMessage: Message = {
             id: aiMsgId,
-            type: 'system', // Use 'system' for AI messages
+            type: 'visitor', // Use 'visitor' for AI messages (shows on left side)
             content: '',
             timestamp: new Date().toISOString(),
             messageId: aiMsgId,
@@ -205,7 +205,13 @@ const ChatWindow: React.FC<ChatWindowProps> = React.memo(({ activeChat, onSendMe
                     content: finalContent,
                     metadata: { is_streaming: false }
                   });
+                } else {
+                  // Ensure is_streaming is set to false even without finalContent
+                  updateMessageByClientMsgNo(aiMsgId, { 
+                    metadata: { is_streaming: false }
+                  });
                 }
+                setIsSending(false);
                 console.log('🤖 AI Chat: Streaming completed');
               },
               // onError
@@ -215,6 +221,7 @@ const ChatWindow: React.FC<ChatWindowProps> = React.memo(({ activeChat, onSendMe
                   content: t('chat.send.aiError', 'AI 响应失败，请重试'),
                   metadata: { is_streaming: false, error: 'AI response failed' }
                 });
+                setIsSending(false);
               }
             );
             onSendMessage?.(message);
@@ -223,6 +230,7 @@ const ChatWindow: React.FC<ChatWindowProps> = React.memo(({ activeChat, onSendMe
             const errorDefault = isAgentChat ? 'AI员工消息发送失败' : '团队消息发送失败';
             console.error(t(errorKey, errorDefault), e);
             showApiError(showToast, e);
+            setIsSending(false);
           }
           return;
         }
