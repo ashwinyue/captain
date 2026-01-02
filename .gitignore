@@ -1,0 +1,114 @@
+# ============================================
+# Captain Project - .gitignore
+# ============================================
+
+# ============================================
+# IDE and Editor
+# ============================================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ============================================
+# Environment and Secrets
+# ============================================
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# ============================================
+# Go
+# ============================================
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+go.work
+
+# ============================================
+# Node.js / Frontend
+# ============================================
+node_modules/
+dist/
+build/
+.cache/
+.parcel-cache/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================
+# Docker
+# ============================================
+docker-compose.override.yml
+
+# ============================================
+# Database / Storage
+# ============================================
+*.db
+*.sqlite
+*.sqlite3
+uploads/
+storage/
+
+# ============================================
+# Logs
+# ============================================
+logs/
+*.log
+
+# ============================================
+# Testing
+# ============================================
+coverage/
+.nyc_output/
+*.cover
+*.coverage
+
+# ============================================
+# Build artifacts
+# ============================================
+*.o
+*.a
+*.out
+bin/
+
+# ============================================
+# Temporary files
+# ============================================
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# ============================================
+# OS specific
+# ============================================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ============================================
+# Project specific exclusions
+# ============================================
+# Exclude embedded git repositories (they were added as submodules)
+WuKongEasySDK-JS/
+WuKongIM/
+WuKongIMJSSDK/
+eino-examples/
+
+# Exclude repos directory (external dependencies)
+repos/
+
+# Exclude codebuddy temp files
+.codebuddy/

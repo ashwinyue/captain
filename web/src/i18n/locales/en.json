@@ -1,0 +1,2718 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "create": "Create",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "done": "Done",
+    "remove": "Remove",
+    "search": "Search",
+    "loading": "Loading...",
+    "loadingMore": "Loading...",
+    "noMore": "No more",
+    "saving": "Saving...",
+    "saveFailed": "Save failed",
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Info",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "reset": "Reset",
+    "clear": "Clear",
+    "select": "Select",
+    "upload": "Upload",
+    "download": "Download",
+    "copy": "Copy",
+    "settings": "Settings",
+    "help": "Help",
+    "about": "About",
+    "characters": "characters",
+    "creating": "Creating...",
+    "updating": "Updating...",
+    "clearSearch": "Clear search",
+    "or": "or",
+    "loadFailed": "Load Failed",
+    "retry": "Retry",
+    "retryFailed": "Retry Failed",
+    "details": "Details",
+    "selectAll": "Select All",
+    "all": "All",
+    "connected": "Connected",
+    "connectionFailed": "Connection failed",
+    "notConnected": "Not connected",
+    "active": "Active",
+    "inactive": "Inactive",
+    "copied": "Copied",
+    "copyFailed": "Copy failed",
+    "enable": "Enable",
+    "more": "more",
+    "optional": "Optional"
+  },
+  "tagInput": {
+    "placeholder": "Enter tag and press Enter to add",
+    "removeTag": "Remove tag",
+    "count": "{{current}}/{{max}} tags",
+    "currentInput": "Current input: {{current}}/{{max}} characters",
+    "hint": "Press Enter or comma to add tag",
+    "errors": {
+      "empty": "Tag name cannot be empty",
+      "tooLong": "Tag name cannot exceed {{max}} characters",
+      "duplicate": "This tag already exists",
+      "maxReached": "Maximum of {{max}} tags allowed"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Customize your preferences and application settings",
+    "menu": {
+      "profile": "Profile",
+      "general": "General",
+      "staff": "Human Agents",
+      "notifications": "Notifications",
+      "providers": "Model Providers",
+      "about": "About",
+      "logout": "Logout"
+    },
+    "profile": {
+      "title": "Profile",
+      "subtitle": "View and manage your personal information",
+      "loadError": "Failed to load profile",
+      "username": "Username",
+      "status": "Status",
+      "description": "Bio",
+      "serviceStatus": "Service Status",
+      "servicePaused": "Service paused",
+      "serviceResumed": "Service resumed",
+      "toggleError": "Failed to toggle service status",
+      "servicePausedLabel": "Service Paused",
+      "serviceActiveLabel": "Active",
+      "servicePausedDesc": "You will not be assigned new visitors while paused, existing conversations are not affected",
+      "serviceActiveDesc": "System will assign new visitors to you based on assignment rules",
+      "resumeService": "Resume Service",
+      "pauseService": "Pause Service",
+      "accountInfo": "Account Information",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "roles": {
+        "admin": "Admin",
+        "user": "Agent",
+        "agent": "AI Agent"
+      },
+      "statuses": {
+        "online": "Online",
+        "offline": "Offline",
+        "busy": "Busy"
+      }
+    },
+    "staff": {
+      "title": "Human Agents",
+      "addStaff": "Add Staff",
+      "editStaff": "Edit Staff",
+      "searchPlaceholder": "Search username or nickname...",
+      "allRoles": "All Roles",
+      "allStatuses": "All Statuses",
+      "tableUser": "User",
+      "tableRole": "Role",
+      "tableStatus": "Status",
+      "tableDescription": "Description",
+      "tableCreated": "Created At",
+      "tableServiceActive": "Service",
+      "tableActions": "Actions",
+      "noResults": "No matching staff found",
+      "empty": "No staff yet, click \"Add Staff\" to create",
+      "username": "Username",
+      "usernamePlaceholder": "Enter username",
+      "nickname": "Nickname",
+      "nicknamePlaceholder": "Enter nickname (optional)",
+      "name": "Name",
+      "namePlaceholder": "Enter name",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Enter staff description (optional)",
+      "password": "Password",
+      "passwordPlaceholder": "Enter password (at least 8 characters)",
+      "passwordPlaceholderEdit": "Leave empty to keep current password",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Re-enter password",
+      "role": "Role",
+      "roleHint": "Regular staff can handle customer conversations, AI agent can be linked to AI agents",
+      "status": "Status",
+      "deleteConfirmTitle": "Confirm Delete",
+      "deleteConfirmMessage": "Are you sure you want to delete staff \"{{name}}\"? This action cannot be undone.",
+      "fetchError": "Failed to fetch staff list",
+      "createSuccess": "Staff created successfully",
+      "updateSuccess": "Staff updated successfully",
+      "deleteSuccess": "Staff deleted successfully",
+      "saveError": "Save failed",
+      "deleteError": "Delete failed",
+      "roles": {
+        "admin": "Admin",
+        "user": "Agent",
+        "agent": "AI Agent"
+      },
+      "statuses": {
+        "online": "Online",
+        "offline": "Offline",
+        "busy": "Busy"
+      },
+      "serviceStopped": "Service stopped for this agent",
+      "serviceStarted": "Service started for this agent",
+      "toggleActiveError": "Failed to toggle service status",
+      "clickToStop": "Click to stop service",
+      "clickToStart": "Click to start service",
+      "description": "About Human Agents",
+      "descriptionText": "When AI agents cannot resolve user issues, the system automatically assigns conversations to human agents. Human agents can take over conversations to provide more professional human support.",
+      "assignmentRules": "Assignment Rules",
+      "assignmentRulesHint": "Configure assignment rules for human agents. The system uses an LLM with this prompt to intelligently assign conversations to the most suitable agent.",
+      "serviceTime": "Service Hours",
+      "serviceWeekdays": "Service Days",
+      "serviceStartTime": "Start Time",
+      "serviceEndTime": "End Time",
+      "timezone": "Timezone",
+      "weekday": {
+        "mon": "Mon",
+        "tue": "Tue",
+        "wed": "Wed",
+        "thu": "Thu",
+        "fri": "Fri",
+        "sat": "Sat",
+        "sun": "Sun"
+      },
+      "chatSettings": "Chat Settings",
+      "maxConcurrentChats": "Max Concurrent Chats",
+      "maxConcurrentChatsHint": "Maximum number of conversations each agent can handle simultaneously",
+      "autoCloseHours": "Auto Close Time",
+      "autoCloseHoursHint": "Time after which inactive conversations are automatically closed",
+      "hours": "hours",
+      "llmAssignment": "Intelligent Assignment",
+      "llmAssignmentHint": "When enabled, the system uses an LLM with this prompt to intelligently assign conversations to the most suitable agent.",
+      "assignmentModel": "Assignment Model",
+      "selectModel": "Select a model",
+      "assignmentModelHint": "Select the LLM for intelligent conversation assignment, models come from Model Providers configuration",
+      "assignmentPrompt": "Assignment Prompt",
+      "assignmentRulesPlaceholder": "Enter assignment rules prompt...",
+      "resetToDefault": "Reset to Default",
+      "saveRules": "Save Rules",
+      "rulesSaved": "Assignment rules saved successfully",
+      "rulesSaveError": "Failed to save assignment rules",
+      "promptTooLong": "Prompt cannot exceed 1000 characters",
+      "errors": {
+        "usernameRequired": "Please enter username",
+        "usernameLength": "Username must be between 1-50 characters",
+        "nameRequired": "Please enter name",
+        "passwordRequired": "Please enter password",
+        "passwordLength": "Password must be at least 8 characters",
+        "passwordMismatch": "Passwords do not match"
+      }
+    },
+    "account": {
+      "title": "Account Information"
+    },
+    "language": {
+      "title": "Language Settings",
+      "description": "Choose your preferred interface language. Changes will take effect immediately.",
+      "persistence": "Language preference will be automatically saved to local storage",
+      "followSystem": "Auto"
+    },
+    "appearance": {
+      "title": "Appearance Settings",
+      "comingSoon": "More appearance and theme options coming soon..."
+    },
+    "theme": {
+      "title": "Theme Mode",
+      "description": "Choose your preferred theme mode. Changes will take effect immediately",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "Follow System"
+    },
+    "general": {
+      "title": "General",
+      "login": "Login",
+      "autoLogin": "Enable WeCom backend auto login",
+      "features": "Features",
+      "emojiToText": "Auto-convert emojis to text",
+      "codeMessage": "Code messages",
+      "speechToText": "Automatically convert voice messages to text",
+      "privacy": "Privacy",
+      "readReceipts": "Read receipts",
+      "readReceiptsDesc": "When off, others cannot see whether you have read messages.",
+      "timezonePrivacy": "Show local time",
+      "timezonePrivacyDesc": "When off, others cannot see your timezone information.",
+      "conversationDisplay": "Conversation display mode",
+      "normal": "Normal",
+      "bubbleLeft": "Bubbles left-aligned"
+    },
+    "storage": {
+      "title": "Storage",
+      "comingSoon": "Cache management, storage usage statistics, etc. Coming soon..."
+    },
+    "notifications": {
+      "title": "Notifications",
+      "notSupported": "Your browser does not support desktop notifications",
+      "permission": {
+        "title": "Notification Permission",
+        "granted": "Authorized",
+        "denied": "Denied",
+        "default": "Not Set",
+        "grantedDesc": "You can receive desktop notifications",
+        "deniedDesc": "Please allow notification permission in browser settings",
+        "defaultDesc": "Click the button to request notification permission",
+        "request": "Request Permission",
+        "requesting": "Requesting..."
+      },
+      "toggles": {
+        "title": "Notification Settings",
+        "desktop": {
+          "title": "Desktop Notifications",
+          "description": "Show notifications in system notification center when new messages arrive"
+        },
+        "sound": {
+          "title": "Sound Alerts",
+          "description": "Play notification sound when new messages arrive"
+        }
+      },
+      "scenarios": {
+        "title": "Notification Scenarios",
+        "background": {
+          "title": "Background Notifications",
+          "description": "Send notifications when page is not visible (tab switched or minimized)"
+        },
+        "otherConversation": {
+          "title": "Other Conversation Messages",
+          "description": "Send notifications when receiving messages from conversations other than the current one"
+        },
+        "newVisitor": {
+          "title": "New Visitor Notifications",
+          "description": "Send notifications when new visitors enter the queue"
+        }
+      },
+      "test": {
+        "title": "Test Notification",
+        "description": "Send a test notification to verify the feature is working correctly",
+        "button": "Send Test"
+      },
+      "tip": "Tip: Notification feature requires browser permission. If you denied the permission request, you need to manually allow notifications for this site in your browser settings."
+    },
+    "models": {
+      "defaults": {
+        "title": "Default Models",
+        "description": "Select the required global default models for LLM and Embedding.",
+        "llmLabel": "Default LLM",
+        "embeddingLabel": "Default Embedding",
+        "selectPlaceholder": "Please select a model",
+        "none": "Not Set",
+        "embeddingHelp": {
+          "title": "Recommended Embedding Models",
+          "providers": {
+            "openai": {
+              "name": "OpenAI",
+              "models": ["text-embedding-3-small", "text-embedding-3-large", "text-embedding-ada-002"]
+            },
+            "qwen": {
+              "name": "Qwen/DashScope",
+              "models": ["text-embedding-v4"]
+            }
+          }
+        },
+        "noModels": "No models available",
+        "noEmbeddingModels": "No embedding models available",
+        "addProvider": "Add Provider"
+      },
+      "toast": {
+        "saved": "Default models saved",
+        "required": "Please set both default LLM and default Embedding models",
+        "atLeastOneRequired": "Please select at least one default model"
+      }
+    }
+,
+	    "providers": {
+	      "title": "Model Providers",
+	      "subtitle": "Manage access configs for AI providers: keys, secure proxy, model lists and defaults.",
+	      "docs": "View Docs",
+	      "add": "Add Provider",
+	      "addTitle": "Add Provider",
+      "enableButton": "Enable",
+      "updateButton": "Update",
+	      "defaultName": "New Provider",
+	      "baseUrl": "Base URL",
+	      "provider": {
+	        "openai": "OpenAI",
+	        "azure": "Azure OpenAI",
+	        "qwen": "Qwen (DashScope)",
+	        "moonshot": "Moonshot (Kimi)",
+	        "deepseek": "DeepSeek",
+	        "baichuan": "Baichuan",
+	        "ollama": "Ollama",
+	        "custom": "Custom"
+	      },
+	      "groups": {
+	        "connection": "Authentication & Connection",
+	        "models": "",
+	        "modelsTitle": "Models & Defaults"
+	      },
+	      "fields": {
+	        "kind": "Provider",
+	        "name": "Name/Alias",
+	        "apiKey": "API Key",
+	        "baseUrl": "API Base URL",
+	        "models": "Available Models",
+	        "defaultModel": "Default Model",
+	        "modelType": "Model Type",
+	        "embeddingModel": "Embedding Model",
+	        "azure": {
+	          "deployment": "Deployment Name",
+	          "resource": "Resource",
+	          "apiVersion": "API Version"
+	        }
+	      },
+	      "modelType": {
+	        "chat": "Chat Model",
+	        "embedding": "Embedding Model"
+	      },
+	      "help": {
+	        "azure": {
+	          "deployment": "Deployment name in Azure, different from model ID",
+	          "resource": "Azure resource name, e.g. your OpenAI service resource",
+	          "apiVersion": "Azure OpenAI API version, e.g. 2024-02-15-preview"
+	        },
+	        "modelsCustom": "If the list is empty or you can't find the model you need, you can manually enter a custom model name",
+	        "embeddingModel": "Enter the embedding model name, e.g. text-embedding-3-small, text-embedding-ada-002"
+	      },
+	      "placeholders": {
+	        "apiKeyMasked": "Configured: {{mask}}, leave empty to keep",
+	        "apiKey": "Paste API Key",
+	        "modelsSearch": "Search or enter model ID...",
+	        "baseUrl": { "custom": "Custom Base URL" },
+	        "embeddingModel": "e.g., text-embedding-3-small"
+	      },
+	      "fetchModels": {
+	        "failed": "Failed to fetch models",
+	        "empty": "No models available"
+	      },
+	      "selectDefaultModel": "Please add models first",
+	      "test": {
+	        "ok": "Connection succeeded",
+	        "failed": "Connection failed"
+	      },
+
+	      "testButton": "Test Connection",
+
+	      "badges": { "default": "Default" },
+	      "toast": {
+	        "added": "Provider added",
+	        "saved": "Changes saved",
+	        "deleted": "Provider deleted"
+	      },
+	      "validate": {
+	        "apiKey": "Please enter API Key",
+	        "azureDeployment": "Please enter Azure deployment name"
+	      },
+
+      "createModelOption": "Create",
+	      "confirmDeleteTitle": "Delete Provider",
+	      "confirmDeleteMsg": "Are you sure you want to delete this provider configuration? This action cannot be undone.",
+	      "empty": "No providers configured yet. Click \u201cAdd Provider\u201d in the top-right to get started."
+	    }
+  },
+  "about": {
+    "title": "System Information",
+    "version": "Version",
+    "environment": "Environment",
+    "apiVersion": "API Version",
+    "pythonVersion": "Python Version",
+    "buildTime": "Build Time",
+    "gitCommit": "Git Commit",
+    "github": "GitHub Repository",
+    "website": "Official Website",
+    "copyright": "All rights reserved.",
+    "loading": "Loading...",
+    "loadError": "Failed to load system information",
+    "systemInfo": "System Information",
+    "technicalDetails": "Technical Details",
+    "links": "Links"
+  },
+  "agents": {
+    "title": "Agent Team Management",
+    "subtitle": "Manage your AI agents",
+    "actions": {
+      "create": "Create Agent",
+      "edit": "Edit Agent",
+      "delete": "Delete Agent",
+      "copy": "Copy Agent",
+      "refresh": "Refresh",
+      "retry": "Retry",
+      "view": "View Details",
+      "viewMore": "View More",
+      "collapse": "Collapse",
+      "teamChat": "Team Chat",
+      "teamChatTooltip": "Chat with agent team",
+      "teamChatNoAgents": "Please create an agent first",
+      "teamInfo": "Team Info"
+    },
+    "form": {
+      "name": "Agent Name",
+      "description": "Description",
+      "detailedDescription": "Detailed Description",
+      "profession": "Profession",
+      "llmModel": "LLM Model",
+      "tools": "Tools",
+      "knowledgeBases": "Knowledge Bases",
+      "avatar": "Avatar"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "online": "Online",
+      "offline": "Offline"
+    },
+    "messages": {
+      "loadFailed": "Load Failed",
+      "loadFailedDesc": "Unable to load agent list, please try again later",
+      "refreshSuccess": "Refresh Successful",
+      "refreshSuccessDesc": "Agent list has been updated",
+      "refreshFailed": "Refresh Failed",
+      "refreshFailedDesc": "Unable to refresh agent list, please try again later",
+      "retryFailed": "Retry Failed",
+      "retryFailedDesc": "Unable to load agent list, please try again later",
+      "createSuccess": "Create Successful",
+      "createSuccessDesc": "Agent \"{{name}}\" has been successfully created",
+      "createFailed": "Create Failed",
+      "updateSuccess": "Update Successful",
+      "updateSuccessDesc": "Agent \"{{name}}\" has been successfully updated",
+      "updateFailed": "Update Failed",
+      "deleteSuccess": "Delete Successful",
+      "deleteSuccessDesc": "Agent \"{{name}}\" has been deleted",
+      "deleteFailed": "Delete Failed",
+      "deleteFailedDesc": "An error occurred while deleting the agent",
+      "copySuccess": "Copy Successful",
+      "copySuccessDesc": "Agent \"{{name}}\" has been successfully copied",
+      "copyFailed": "Copy Failed",
+      "copyFailedDesc": "An error occurred while copying the agent",
+      "statusUpdateSuccess": "Refresh Successful",
+      "statusUpdateSuccessDesc": "Agent \"{{name}}\" status has been updated",
+      "statusUpdateFailed": "Refresh Failed",
+      "statusUpdateFailedDesc": "An error occurred while updating agent status",
+      "noTeam": "Team not loaded",
+      "noTeamDesc": "Please try again later",
+      "noAgentsForTeamChat": "Cannot start team chat",
+      "noAgentsForTeamChatDesc": "Please create at least one agent first"
+    },
+    "teamChat": {
+      "defaultName": "Agent Team"
+    },
+    "empty": {
+      "title": "No Agents",
+      "description": "Click the \"Create Agent\" button to start creating your first agent"
+    },
+    "error": {
+      "title": "Load Failed",
+      "retry": "Retry"
+    },
+    "card": {
+      "defaultRole": "Agent",
+      "noTools": "No tools associated",
+      "noKnowledgeBases": "No knowledge bases associated",
+      "chatTooltip": "Chat with Agent",
+      "editTooltip": "Edit Agent",
+      "deleteTooltip": "Delete Agent",
+      "llmLabel": "LLM",
+      "status": {
+        "active": "Active",
+        "inactive": "Inactive",
+        "error": "Error",
+        "unknown": "Unknown"
+      }
+    },
+    "copy": {
+      "suffix": " (Copy)",
+      "defaultProfession": "Expert"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "modal": {
+      "create": {
+        "title": "Create Agent"
+      },
+      "edit": {
+        "title": "Edit Agent"
+      },
+      "detail": {
+        "title": "Agent Details"
+      },
+      "delete": {
+        "title": "Delete Agent",
+        "message": "Are you sure you want to delete agent \"{{name}}\"? This action cannot be undone.",
+        "confirm": "Delete",
+        "cancel": "Cancel"
+      }
+    },
+
+    "create": {
+      "sections": {
+        "modelConfig": "Model Configuration",
+        "description": "Agent Description",
+        "mcpTools": "MCP Tools"
+      },
+      "placeholders": {
+        "name": "Please enter agent name",
+        "profession": "e.g. Customer Support, Technical Support, Sales Consultant",
+        "description": "Please describe the agent’s functions, responsibilities and characteristics, e.g., handling customer inquiries, providing product information and technical support..."
+      },
+      "models": {
+        "loading": "Loading models...",
+        "error": "Failed to load models",
+        "empty": "No models available",
+        "selectPlaceholder": "Please select a model",
+        "loadFailedTitle": "Load Failed",
+        "loadFailedDesc": "Unable to load model list, please try again later",
+        "loadFailedInline": "Model load failed: {{error}}"
+      },
+      "tools": {
+        "shortNoMissingTitle": "Missing Tool Short No",
+        "shortNoMissingDesc": "The following tools are missing short_no or name: {{names}}, please refresh the tool store or reselect and try again"
+      }
+    },
+
+    "edit": {
+      "loading": "Loading agent details...",
+      "loadAgentError": "Unable to load agent details, please try again later",
+      "updateFailedUnknown": "An unknown error occurred while updating the agent",
+      "tools": {
+        "pendingNewTool": "Pending new tool",
+        "missingTitle": "Tool Information Missing",
+        "missingDesc": "The following tools are missing name: {{names}}, please reselect and try again"
+      }
+    },
+
+
+    "detail": {
+      "basicInfo": "Basic Info",
+      "performanceStats": "Performance Stats",
+      "mcpTools": "Associated MCP Tools",
+      "knowledgeBases": "Associated Knowledge Bases",
+      "tags": "Tags",
+      "fields": {
+        "description": "Description",
+        "agentId": "Agent ID",
+        "llmModel": "LLM Model",
+        "endpoint": "Endpoint",
+        "lastActive": "Last Active"
+      },
+      "metrics": {
+        "conversationCount": "Conversations",
+        "successRate": "Success Rate",
+        "avgResponseTime": "Avg Response Time"
+      },
+      "noKnowledgeBases": "No knowledge bases associated",
+      "knowledgeBasePrefix": "KB {{id}}",
+      "closeButton": "Close"
+    },
+    "toolsSection": {
+      "selectedTitle": "Selected Tools",
+      "selectedCount": "{{count}} Selected",
+      "addButton": "Add Tool",
+      "emptyTitle": "No tools added",
+      "emptyDescription": "Click \"Add Tool\" to select MCP tools"
+    },
+    "knowledgeBasesSection": {
+      "selectedTitle": "Selected Knowledge Bases",
+      "selectedCount": "{{count}} Selected",
+      "addButton": "Add Knowledge Base",
+      "emptyTitle": "No knowledge bases added",
+      "emptyDescription": "Click \"Add Knowledge Base\" to select knowledge bases"
+    },
+    "toolsList": {
+      "label": "Associated Tools"
+    },
+    "apiTest": {
+      "title": "Test {{name}}",
+      "authMethod": "Auth Method",
+      "autoDetected": "Auto-detected",
+      "autoDetectedTitle": "Auto-detected from OpenAPI ({{level}})",
+      "autoLevel": {
+        "operation": "operation-level",
+        "global": "global-level"
+      },
+      "authDisplay": {
+        "none": "None",
+        "header": "Header",
+        "headerWithPrefix": "Header ({{prefix}})",
+        "query": "Query",
+        "autoDetected": "Auto-detected: {{type}}"
+      },
+      "paramsAndValues": "Parameters & Values",
+      "param": "Parameter",
+      "value": "Value",
+      "type": "Type",
+      "format": "Format",
+      "min": "Min",
+      "max": "Max",
+      "minLength": "Min Length",
+      "maxLength": "Max Length",
+      "pattern": "Pattern",
+      "selectPlaceholder": "Please select",
+      "inputPlaceholder": "Please enter",
+      "examplePrefix": "Example: {{value}}",
+      "defaultPrefix": "Default: {{value}}",
+      "noParams": "This endpoint has no parameters",
+      "button": {
+        "testing": "Testing...",
+        "test": "Test"
+      },
+      "results": "Test Results",
+      "corsHint": "CORS Hint",
+      "corsNote": "Note: Due to browser CORS restrictions, some APIs may not be directly testable",
+      "errorLabel": "Error:",
+      "responseHeaders": "Response Headers:",
+      "responseData": "Response Data:",
+      "resultsPlaceholder": "Test results will appear here",
+      "requestFailed": "Request failed",
+      "networkFailed": "Network connection failed. Check URL or possible CORS issues"
+    },
+    "authMethod": {
+      "title": "Auth Method",
+      "type": "Auth Type",
+      "types": {
+        "none": "None",
+        "header": "Header",
+        "query": "Query"
+      },
+      "headerPrefix": "Auth Header Prefix",
+      "headerPrefixes": {
+        "basic": "Basic",
+        "bearer": "Bearer",
+        "custom": "Custom"
+      },
+      "keyLabel": "Key",
+      "valueLabel": "Value",
+      "keyPlaceholder": {
+        "header": "Authorization",
+        "query": "api_key"
+      },
+      "valuePlaceholder": {
+        "header": {
+          "basic": "Basic <credentials>",
+          "bearer": "Bearer <token>"
+        },
+        "default": "Enter API Key"
+      },
+      "cancel": "Cancel",
+      "save": "Save"
+    }
+  },
+  "team": {
+    "modal": {
+      "title": "Team Info",
+      "name": "Team Name",
+      "namePlaceholder": "Enter team name",
+      "model": "LLM Model",
+      "modelHint": "Select the default LLM model for the team",
+      "instruction": "Team Instructions",
+      "instructionPlaceholder": "Enter team system prompt or instructions...",
+      "instructionHint": "This instruction will be applied to all agents in the team",
+      "noTeam": "Default team not found",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saveSuccess": "Save Successful",
+      "saveSuccessDesc": "Team information has been updated",
+      "saveFailed": "Save Failed",
+      "saveFailedDesc": "An error occurred while updating team information",
+      "models": {
+        "loading": "Loading models...",
+        "error": "Failed to load models",
+        "empty": "No models available",
+        "selectPlaceholder": "Select a model"
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Sign in to your account",
+      "email": "Email address",
+      "emailOrUsername": "Email or Username",
+      "password": "Password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "loginButton": "Sign In",
+      "loggingIn": "Signing in...",
+      "noAccount": "Don't have an account?",
+      "registerLink": "Sign up now",
+      "emailPlaceholder": "you@example.com",
+      "emailOrUsernamePlaceholder": "Enter email or username",
+      "passwordPlaceholder": "Enter your password"
+    },
+    "register": {
+      "title": "Create new account",
+      "email": "Email address",
+      "password": "Set password",
+      "passwordConfirmation": "Confirm password",
+      "registerButton": "Sign Up",
+      "registering": "Signing up...",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Sign in",
+      "emailPlaceholder": "you@example.com",
+      "passwordPlaceholder": "At least 8 characters",
+      "passwordConfirmationPlaceholder": "Enter password again"
+    },
+    "validation": {
+      "emailRequired": "Please enter email address",
+      "emailOrUsernameRequired": "Please enter email or username",
+      "emailInvalid": "Please enter a valid email address",
+      "passwordRequired": "Please enter password",
+      "passwordMinLength": "Password must be at least {{min}} characters",
+      "passwordConfirmationRequired": "Please confirm password",
+      "passwordMismatch": "Passwords do not match",
+      "loginFailed": "Login failed, please check your email and password",
+      "registerFailed": "Registration failed, please try again",
+      "networkError": "Network connection failed, please check your network settings",
+      "serverError": "Server error, please try again later",
+      "invalidCredentials": "Invalid username or password",
+      "userExists": "User already exists, please use a different email",
+      "weakPassword": "Password is too weak, please use a more complex password"
+    },
+    "notLoggedIn": "Not logged in",
+    "agent": "Agent",
+    "user": "User",
+    "logout": "Logout",
+    "sessionExpiredTitle": "Session expired",
+    "sessionExpiredMessage": "Please sign in again"
+  },
+  "navigation": {
+    "chat": "Chat",
+    "ai": "AI Assistant",
+    "aiFeatures": "AI Features",
+    "agents": "Agent Teams",
+    "mcpTools": "MCP Tools",
+    "visitors": "Visitors",
+    "knowledge": "Knowledge Base",
+    "channels": "Platform Management",
+    "settings": "Settings"
+  },
+  "ai": {
+    "menu": {
+      "title": "AI Features"
+    }
+  },
+  "knowledge": {
+    "title": "Knowledge Base",
+    "subtitle": "Manage knowledge sources available to agents.",
+    "create": "Create Knowledge Base",
+    "createDesc": "Select knowledge base type and fill in basic information",
+    "edit": "Edit Knowledge Base",
+    "editDesc": "Modify knowledge base basic information",
+    "delete": "Delete Knowledge Base",
+    "name": "Name",
+    "description": "Description",
+    "category": "Category",
+    "namePlaceholder": "Enter knowledge base name",
+    "descriptionPlaceholder": "Describe the content and purpose of the knowledge base",
+    "descriptionHelper": "The more accurate the description, the easier it is for AI to use this knowledge base correctly",
+    "icon": "Icon",
+    "iconHelper": "Choose an icon to identify your knowledge base",
+    "tags": "Tags",
+    "tagsPlaceholder": "Enter tags and press Enter to add",
+    "tagsHelper": "Adding tags helps you organize and find knowledge bases",
+    "filesCount": "{{count}} files",
+    "manage": "Manage Knowledge Base",
+    "basicInfo": "Basic Information",
+    "selectType": "Select Type",
+    "typeFileShort": "File",
+    "typeWebsiteShort": "Website",
+    "typeQAShort": "QA",
+    "typeTmall": "Tmall",
+    "typeTmallShort": "Tmall Products",
+    "typeTaobao": "Taobao",
+    "typeTaobaoShort": "Taobao Products",
+    "typeJD": "JD.com",
+    "typeJDShort": "JD Products",
+    "comingSoon": "Coming Soon",
+    "comingSoonBadge": "Coming Soon",
+    "selectModal": {
+      "title": "Select Knowledge Base",
+      "searchPlaceholder": "Search knowledge bases...",
+      "selectedSummary": "Selected {{selected}} / Total {{total}}",
+      "loading": "Loading knowledge bases...",
+      "noMatch": "No matching knowledge base found",
+      "confirmSelection": "Confirm selection ({{count}})",
+      "loadFailedDesc": "Unable to load knowledge base list, please try again later",
+      "retryFailedDesc": "Unable to load knowledge base list, please check your network connection"
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "nameMin": "Name must be at least 2 characters",
+      "nameMax": "Name cannot exceed 50 characters",
+      "descRequired": "Description is required",
+      "descMin": "Description must be at least 5 characters",
+      "descMax": "Description cannot exceed 500 characters",
+      "urlRequired": "Website URL is required",
+      "urlInvalid": "Please enter a valid URL"
+    },
+    "type": "Type",
+    "typeFile": "File",
+    "typeWebsite": "Website",
+    "typeQA": "QA Pairs",
+    "typeFileDesc": "Upload document files to build knowledge base",
+    "typeWebsiteDesc": "Crawl website content to build knowledge base",
+    "typeQADesc": "Create QA pairs to build knowledge base",
+    "typeReadonly": "Knowledge base type cannot be changed after creation",
+    "advancedSettings": "Advanced Settings",
+    "metadata": {
+      "fetch": "Fetch Info",
+      "fetching": "Fetching info...",
+      "fetchSuccess": "Website info fetched",
+      "fetchFailed": "Failed to fetch website info",
+      "hint": "Website title and description will be fetched automatically after entering URL",
+      "defaultDescription": "Knowledge base from {{domain}}"
+    },
+    "crawl": {
+      "title": "Crawl Configuration",
+      "info": "Crawl Configuration",
+      "urlSection": "Website URL",
+      "startUrl": "Website URL",
+      "startUrlPlaceholder": "https://example.com",
+      "maxPages": "Max Pages",
+      "maxPagesHint": "1-10000, default 100",
+      "maxDepth": "Max Depth",
+      "maxDepthHint": "1-10, default 3",
+      "advancedOptions": "Advanced Options",
+      "includePatterns": "Include Patterns",
+      "includePatternsPlaceholder": "/docs/*, /blog/*",
+      "includePatternsHint": "Comma-separated URL patterns, only crawl matching pages",
+      "excludePatterns": "Exclude Patterns",
+      "excludePatternsPlaceholder": "/admin/*, /login/*",
+      "excludePatternsHint": "Comma-separated URL patterns, skip matching pages",
+      "renderJs": "Render JavaScript",
+      "renderJsHint": "Enable to execute page JavaScript, suitable for dynamic content websites",
+      "followExternal": "Follow External Links",
+      "respectRobots": "Respect robots.txt",
+      "waitTime": "Wait Time (seconds)",
+      "waitTimeHint": "Time to wait after page load, for dynamic content",
+      "start": "Start Crawl",
+      "cancel": "Cancel Crawl",
+      "started": "Crawl Started",
+      "startedDesc": "Website crawl job has been started",
+      "startFailed": "Crawl Start Failed",
+      "startFailedDesc": "An error occurred while starting the crawl job",
+      "cancelled": "Crawl Cancelled",
+      "cancelledDesc": "Website crawl job has been cancelled",
+      "cancelFailed": "Cancel Failed",
+      "cancelFailedDesc": "An error occurred while cancelling the crawl job",
+      "noConfig": "No Crawl Configuration",
+      "noConfigDesc": "This knowledge base has no crawl configuration",
+      "status": {
+        "pending": "Pending",
+        "crawling": "Crawling",
+        "processing": "Processing",
+        "completed": "Completed",
+        "failed": "Failed",
+        "cancelled": "Cancelled"
+      }
+    },
+    "website": {
+      "loading": "Loading...",
+      "loadFailed": "Failed to load knowledge base",
+      "loadPagesFailed": "Failed to load pages",
+      "noPages": "No crawled pages yet",
+      "tabs": {
+        "pages": "Pages"
+      },
+      "columns": {
+        "url": "URL",
+        "title": "Title",
+        "status": "Status",
+        "depth": "Depth",
+        "crawledAt": "Crawled At",
+        "actions": "Actions"
+      },
+      "pageStatus": {
+        "pending": "Pending",
+        "crawling": "Crawling",
+        "fetched": "Fetched",
+        "extracted": "Extracted",
+        "processing": "Processing",
+        "processed": "Processed",
+        "failed": "Failed",
+        "skipped": "Skipped"
+      },
+      "progress": {
+        "title": "Crawl Progress",
+        "crawling": "Crawling",
+        "completed": "Completed",
+        "total": "Total Pages",
+        "pending": "Pending",
+        "crawled": "Crawled",
+        "processing": "Processing",
+        "processed": "Processed",
+        "failed": "Failed"
+      },
+      "addPage": {
+        "button": "Add Page",
+        "title": "Manually Add Page",
+        "urlLabel": "Page URL",
+        "urlPlaceholder": "Enter the page URL to add",
+        "parentPageLabel": "Parent Page",
+        "noParent": "None (Add as root page)",
+        "parentPageHint": "Select a parent page, the new page will be added as its child",
+        "maxDepthLabel": "Crawl Depth",
+        "depthOption0": "This page only (Depth 0)",
+        "depthOption1": "Include direct links (Depth 1)",
+        "depthOption2": "Depth 2",
+        "depthOption3": "Depth 3",
+        "depthOption5": "Depth 5",
+        "depthOption10": "Depth 10 (Maximum)",
+        "hint": "Enter a valid URL, the page will be added to the crawl queue",
+        "submit": "Add",
+        "success": "Page added successfully",
+        "skipped": "Page already exists",
+        "failed": "Failed to add page"
+      },
+      "deletePage": {
+        "button": "Delete",
+        "success": "Page deleted successfully",
+        "failed": "Failed to delete page"
+      },
+      "recrawlPage": {
+        "button": "Recrawl",
+        "success": "Recrawl started",
+        "skipped": "Page is already being crawled",
+        "failed": "Failed to recrawl page"
+      },
+      "crawlDeeper": {
+        "button": "Crawl Deeper",
+        "notReady": "Page not yet processed, cannot crawl deeper",
+        "success": "Deep crawl started",
+        "successDesc": "Added {{added}} pages, found {{found}} links",
+        "noNewPages": "No new pages found",
+        "failed": "Deep crawl failed"
+      }
+    },
+    "qa": {
+      "loading": "Loading...",
+      "loadFailed": "Failed to load knowledge base",
+      "loadPairsFailed": "Failed to load QA pairs",
+      "noPairs": "No QA pairs yet",
+      "add": "Add QA Pair",
+      "addTitle": "Add QA Pair",
+      "addSuccess": "QA pair added successfully",
+      "addFailed": "Failed to add QA pair",
+      "editTitle": "Edit QA Pair",
+      "editSuccess": "QA pair updated successfully",
+      "editFailed": "Failed to update QA pair",
+      "deleteSuccess": "QA pair deleted successfully",
+      "deleteFailed": "Failed to delete QA pair",
+      "import": "Import",
+      "importTitle": "Import QA Pairs",
+      "importFormat": "Select Format",
+      "importData": "Paste Data",
+      "importButton": "Start Import",
+      "importSuccess": "Successfully imported {{count}} QA pairs",
+      "importFailed": "Import failed",
+      "importJsonPlaceholder": "Paste JSON array data...",
+      "importCsvPlaceholder": "Paste CSV data...",
+      "importJsonFormat": "JSON format example:",
+      "importCsvFormat": "CSV format example:",
+      "searchPlaceholder": "Search questions or answers...",
+      "allCategories": "All Categories",
+      "allStatuses": "All Statuses",
+      "pagination": "Page {{current}} / {{total}}",
+      "stats": {
+        "total": "Total QA Pairs",
+        "pending": "Pending",
+        "processed": "Processed",
+        "failed": "Failed"
+      },
+      "status": {
+        "pending": "Pending",
+        "processing": "Processing",
+        "processed": "Processed",
+        "failed": "Failed"
+      },
+      "form": {
+        "question": "Question",
+        "questionPlaceholder": "Enter the question...",
+        "answer": "Answer",
+        "answerPlaceholder": "Enter the answer...",
+        "category": "Category",
+        "categoryPlaceholder": "Enter category (optional)",
+        "tags": "Tags",
+        "tagsPlaceholder": "Enter tags, separated by commas",
+        "tagsHint": "Separate multiple tags with commas"
+      }
+    },
+    "icons": {
+      "book": "Book",
+      "fileText": "Document",
+      "database": "Database",
+      "brain": "Intelligence",
+      "lightbulb": "Idea",
+      "bookOpen": "Open Book",
+      "library": "Library",
+      "graduationCap": "Learning",
+      "bookmark": "Bookmark",
+      "archive": "Archive",
+      "folderOpen": "Folder",
+      "hardDrive": "Storage",
+      "layers": "Layers",
+      "package": "Package",
+      "briefcase": "Briefcase",
+      "target": "Target",
+      "zap": "Lightning",
+      "star": "Star",
+      "heart": "Heart",
+      "globe": "Global"
+    },
+    "list": {
+      "columns": {
+        "name": "Name",
+        "type": "Type",
+        "documents": "Documents",
+        "lastUpdated": "Last Updated",
+        "actions": "Actions"
+      },
+      "loadFailedDesc": "An error occurred while fetching knowledge bases"
+    },
+    "empty": {
+      "title": "No Knowledge Bases",
+      "description": "Create your first knowledge base to get started"
+    },
+    "error": {
+      "clear": "Clear Error"
+    },
+    "confirmDelete": {
+      "message": "Are you sure you want to delete knowledge base \"{{name}}\"? This action cannot be undone."
+    },
+    "file": {
+      "confirmDelete": {
+        "message": "Are you sure you want to delete file \"{{name}}\"? This action cannot be undone."
+      }
+    },
+    "detail": {
+      "title": "Knowledge Base Details",
+      "backToList": "Back to Knowledge Base List",
+      "refresh": "Refresh",
+      "uploadDocument": "Upload Document",
+      "searchPlaceholder": "Search documents...",
+      "filter": "Filter",
+      "allTypes": "All Types",
+      "totalDocuments": "Total: {{count}} documents",
+      "totalSize": "Size: {{size}} MB",
+      "lastUpdated": "Last updated: {{date}}",
+      "documentName": "Document Name",
+      "fileSize": "File Size",
+      "uploadTime": "Upload Time",
+      "status": "Status",
+      "actions": "Actions",
+      "processed": "Processed",
+      "processing": "Processing",
+      "error": "Error",
+      "pending": "Pending",
+      "archived": "Archived",
+      "download": "Download",
+      "preview": "Preview",
+      "delete": "Delete",
+      "noDocuments": "No Documents",
+      "noDocumentsDesc": "This knowledge base has no uploaded documents yet",
+      "startUploading": "Start uploading documents",
+      "loading": "Loading...",
+      "loadingDetails": "Loading knowledge base details...",
+      "loadFailedDefault": "Failed to load knowledge base details",
+      "loadFailedDesc": "An error occurred while loading knowledge base details",
+      "notFound": {
+        "title": "Knowledge Base Not Found",
+        "description": "Please check if the link is correct"
+      },
+      "fileServiceNotInitialized": "File service not initialized"
+    },
+    "upload": {
+      "title": "Drag files here or click to upload",
+      "supportedFormats": "Supports PDF, Word, Excel, PowerPoint, Text files, Markdown, HTML",
+      "selectFiles": "Select Files",
+      "uploading": "Uploading...",
+      "uploadProgress": "Upload Progress",
+      "uploadComplete": "Upload Complete",
+      "uploadFailed": "Upload Failed",
+      "maxFileSize": "File size cannot exceed 10MB",
+      "unsupportedFormat": "Unsupported file format",
+      "multipleSuccessMessage": "{{count}} files uploaded successfully",
+      "partialSuccess": "Partial Upload Success",
+      "partialSuccessMessage": "{{success}} files uploaded successfully, {{failed}} files failed",
+      "checkingEmbedding": "Checking embedding model configuration...",
+      "noEmbeddingModel": {
+        "title": "⚠️ Cannot Upload Files",
+        "description": "No embedding model configured. Knowledge base files require an embedding model for vectorization. Please configure a default embedding model in AI Provider Settings first.",
+        "goToSettings": "Go to Settings"
+      }
+    },
+    "embedding": {
+      "error": "Error",
+      "noProject": "Current project not found",
+      "checkFailed": "Check Failed",
+      "checkFailedDesc": "Unable to verify embedding model configuration. Please ensure an embedding model is configured.",
+      "requiredTitle": "Embedding Model Required",
+      "requiredDesc": "Creating a knowledge base requires a default embedding model to be configured. The embedding model is used to convert document content into vectors for semantic search.",
+      "configPath": "Configuration Path",
+      "configPathDesc": "Settings → Model Providers → Set Default Embedding Model",
+      "goToConfig": "Go to Configuration"
+    }
+  },
+  "channels": {
+    "title": "Platform Management",
+    "custom": "Custom Platform",
+    "config": "Configuration",
+    "status": "Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "placeholder": {
+      "selectOrCreate": "Please select a platform from the left, or click \"+\" to create a new one."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Tgo CS. All rights reserved."
+  },
+  "brand": {
+    "name": "Tgo CS"
+  },
+  "comingSoon": {
+    "title": "Coming soon",
+    "description": "This feature is under development. Stay tuned..."
+  },
+  "visitor": {
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "management": {
+      "title": "Visitor Management",
+      "subtitle": "View and manage visitor information from all platforms",
+      "totalVisitors": "Total Visitors",
+      "errorTitle": "Load Failed"
+    },
+    "table": {
+      "visitor": "Visitor",
+      "platform": "Platform",
+      "lastVisit": "Last Visit",
+      "lastOnline": "Last Online",
+      "tags": "Tags",
+      "actions": "Actions",
+      "empty": "No visitor data"
+    },
+    "filters": {
+      "search": {
+        "placeholder": "Search name, email or phone..."
+      },
+      "platform": {
+        "all": "All Platforms"
+      },
+      "tags": {
+        "all": "All Tags",
+        "select": "Filter by Tag",
+        "selected": "Selected Tags"
+      },
+      "sort": {
+        "lastVisit": "Last Active",
+        "createdAt": "Newest"
+      },
+      "online": {
+        "all": "All Statuses",
+        "online": "Online",
+        "offline": "Offline"
+      }
+    },
+    "detail": {
+      "title": "Visitor Details",
+      "basicInfo": "Basic Info",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "jobTitle": "Job Title",
+      "source": "Source",
+      "note": "Note",
+      "systemInfo": "System Info",
+      "platform": "Platform",
+      "firstVisit": "First Visit",
+      "lastVisit": "Last Visit"
+    },
+    "unknown": "Unknown Visitor",
+    "fallbackName": "Visitor {{suffix}}",
+    "onlineStatus": {
+      "online": "Online",
+      "justNow": "Just now",
+      "minutesAgo": "{{count}}m ago",
+      "hoursAgo": "{{count}}h ago",
+      "daysAgo": "{{count}}d ago",
+      "weeksAgo": "{{count}}w ago"
+    },
+    "ai": {
+      "emotion": {
+        "neutral": "Neutral"
+      }
+    },
+    "system": {
+      "defaultSource": "Official Website",
+      "fields": {
+        "platform": "Platform",
+        "sourcePage": "Source Page",
+        "browser": "Browser",
+        "os": "Operating System",
+        "language": "Language",
+        "timezone": "Timezone",
+        "ipAddress": "IP Address",
+        "location": "Location",
+        "firstSeen": "First Seen"
+      },
+      "empty": "No system information"
+    },
+    "sections": {
+      "basicInfo": "Basic Info",
+      "aiInsights": "AI Insights",
+      "systemInfo": "System Information",
+      "recentActivity": "Recent Activity",
+      "aiPersona": "AI Persona",
+      "relatedTickets": "Related Tickets"
+    },
+    "aiInsights": {
+      "satisfactionScore": "Satisfaction Score",
+      "emotionScore": "Emotion Score",
+      "intent": "Intent",
+      "insightSummary": "Insight Summary",
+      "currentSatisfaction": "Current Satisfaction",
+      "currentEmotion": "Current Emotion"
+    },
+    "activity": {
+      "noActivity": "No activity yet",
+      "noTickets": "No related tickets",
+      "duration": {
+        "seconds": "Duration {{count}}s",
+        "minutes": "Duration {{count}} minutes",
+        "minutesSeconds": "Duration {{m}}m {{s}}s"
+      }
+    },
+    "persona": {
+      "noData": "No persona data"
+    },
+    "load": {
+      "failedTitle": "Failed to load visitor information",
+      "failedDesc": "Failed to load visitor data"
+    },
+    "ui": {
+      "loading": "Loading visitor information...",
+      "loadFailed": "Load Failed",
+      "selectConversation": "Select a chat to view visitor information",
+      "noInfo": "No visitor information"
+    },
+    "fields": {
+      "name": "Name",
+      "nickname": "Nickname",
+      "email": "Email",
+      "phone": "Phone",
+      "note": "Note",
+      "field": "Field"
+    },
+    "update": {
+      "successTitle": "Updated successfully",
+      "fieldUpdated": "{{field}} has been updated",
+      "failedTitle": "Update failed",
+      "failedDesc": "Update failed"
+    },
+    "validation": {
+      "invalidEmail": "Please enter a valid email address",
+      "invalidPhone": "Please enter a valid phone number"
+    },
+    "avatar": {
+      "uploadTitle": "Click to upload avatar",
+      "cropTitle": "Crop Avatar",
+      "invalidTypeTitle": "Invalid file type",
+      "invalidTypeDesc": "Please select a JPEG, PNG, GIF, or WebP image",
+      "fileTooLargeTitle": "File too large",
+      "fileTooLargeDesc": "Image size must not exceed 5MB",
+      "uploadSuccessTitle": "Upload successful",
+      "uploadSuccessDesc": "Visitor avatar has been updated",
+      "uploadFailedTitle": "Upload failed",
+      "uploadFailedDesc": "Upload failed"
+    },
+    "customAttr": {
+      "addButton": "Add Custom Attribute",
+      "namePlaceholder": "Attribute name",
+      "valuePlaceholder": "Attribute value",
+      "templates": {
+        "company": "Company",
+        "jobTitle": "Job Title",
+        "department": "Department",
+        "industry": "Industry",
+        "sourceChannel": "Source Channel",
+        "budgetRange": "Budget Range",
+        "decisionAuthority": "Decision Authority",
+        "urgency": "Urgency",
+        "note": "Note"
+      },
+      "addSuccessTitle": "Added successfully",
+      "addSuccessDesc": "Custom attribute added",
+      "addFailedTitle": "Add failed",
+      "addFailedDesc": "Add failed",
+      "updateSuccessTitle": "Updated successfully",
+      "updateSuccessDesc": "Custom attribute updated",
+      "updateFailedTitle": "Update failed",
+      "updateFailedDesc": "Update failed",
+      "deleteSuccessTitle": "Deleted successfully",
+      "deleteSuccessDesc": "Custom attribute deleted",
+      "deleteFailedTitle": "Delete failed",
+      "deleteFailedDesc": "Delete failed"
+    },
+    "tags": {
+      "title": "Tags",
+      "addButton": "Add",
+      "editTagTitle": "Edit Tag",
+      "deleteTagTitle": "Delete Tag",
+      "inputPlaceholder": "Enter tag name",
+      "editPanel": {
+        "weightLabel": "Weight (0-10)",
+        "colorLabel": "Color"
+      },
+      "colorPicker": {
+        "title": "Choose color"
+      },
+      "weightTitle": "Weight: {{weight}}",
+      "limitReached": "Tag limit reached ({{max}} max)",
+      "common": {
+        "title": "Common Tags:",
+        "loading": "Loading",
+        "loadFailed": "Failed to fetch common tags",
+        "empty": "No available tags"
+      },
+      "colors": {
+        "red": "Red",
+        "orange": "Orange",
+        "yellow": "Yellow",
+        "green": "Green",
+        "emerald": "Emerald",
+        "teal": "Teal",
+        "blue": "Blue",
+        "indigo": "Indigo",
+        "purple": "Purple",
+        "pink": "Pink",
+        "gray": "Gray"
+      },
+      "addSuccessTitle": "Added successfully",
+      "addSuccessDesc": "Tag added",
+      "addFailedTitle": "Add failed",
+      "addFailedDesc": "Failed to add tag",
+      "updateSuccessTitle": "Updated successfully",
+      "updateSuccessDesc": "Tag updated",
+      "updateFailedTitle": "Update failed",
+      "updateFailedDesc": "Failed to update tag",
+      "removeSuccessTitle": "Deleted successfully",
+      "removeSuccessDesc": "Tag deleted",
+      "removeFailedTitle": "Delete failed",
+      "removeFailedDesc": "Failed to delete tag",
+      "errors": {
+        "notFound": "Tag not found",
+        "noTagId": "Failed to get tag ID"
+      }
+    }
+  },
+  "errors": {
+    "incompleteVisitorInfo": "Visitor information is incomplete",
+    "missingVisitorId": "Missing visitor_id"
+  },
+  "search": {
+    "tabs": {
+      "all": "All",
+      "visitors": "Visitors",
+      "messages": "Messages"
+    },
+    "placeholder": "Search visitors or messages",
+    "clear": "Clear",
+    "aria": {
+      "tablist": "Search categories"
+    },
+    "errorGeneric": "Search failed, please try again later",
+    "toasts": {
+      "notFoundTitle": "Conversation not found",
+      "noConversationInfo": "This result lacks conversation info",
+      "notInRecent": "This conversation is not in the recent list. Try refreshing.",
+      "incompleteVisitorInfo": "Visitor information is incomplete",
+      "missingVisitorId": "Missing visitor_id"
+    },
+    "emptyQueryHint": "Enter a keyword to start searching",
+    "searching": "Searching...",
+    "visitorsSectionTitle": "Visitors ({{count}})",
+    "messagesSectionTitle": "Messages ({{count}})",
+    "noVisitorsFound": "No related visitors found",
+    "noMessagesFound": "No related messages found",
+    "noPreview": "(No preview)",
+    "channel": "Conversation",
+    "footer": {
+      "hintPrefix": "Tip:",
+      "esc": "Esc to close",
+      "enter": "Enter to open",
+      "tip": "Tip:",
+      "escClose": "Esc to close",
+      "enterOpen": "Enter to open",
+      "summary": "Search visitors and messages"
+    },
+    "footerText": "Search visitors and messages",
+    "sections": {
+      "visitors": "Visitors",
+      "messages": "Messages"
+    },
+    "empty": {
+      "visitors": "No related visitors found",
+      "messages": "No related messages found"
+    }
+  },
+  "time": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "relative": {
+      "justNow": "Just now",
+      "minutes": "{{count}} minutes ago",
+      "minutesAgo": "{{count}} minutes ago",
+      "hours": "{{count}} hours ago",
+      "hoursAgo": "{{count}} hours ago",
+      "yesterdayAt": "Yesterday {{time}}",
+      "days": "{{count}} days ago"
+    },
+    "lastSeen": {
+      "justNow": "Online just now",
+      "justNowShort": "Just now",
+      "minutesAgo": "Online {{mins}} minutes ago",
+      "minutesShort": "{{mins}} min",
+      "online": "Online"
+    },
+    "weekdays": {
+      "0": "Sunday",
+      "1": "Monday",
+      "2": "Tuesday",
+      "3": "Wednesday",
+      "4": "Thursday",
+      "5": "Friday",
+      "6": "Saturday"
+    }
+  },
+  "chat": {
+    "title": "Chat Management",
+    "openChat": "Open Chat",
+    "sync": {
+      "syncing": "Syncing conversations...",
+      "success": "Conversations synced successfully",
+      "failed": "Failed to sync conversations",
+      "retry": "Retry",
+      "lastSync": "Last sync: {{time}}",
+      "refresh": "Refresh conversations",
+      "noConversations": "No conversations",
+      "loadError": "Failed to load conversations"
+    },
+    "status": {
+      "online": "Online",
+      "offline": "Offline",
+      "connecting": "Connecting...",
+      "connected": "Connected",
+      "disconnected": "Disconnected",
+      "ai_typing": "AI typing..."
+    },
+    "actions": {
+      "refresh": "Refresh",
+      "retry": "Retry",
+      "delete": "Delete conversation",
+      "markRead": "Mark as read"
+    },
+    "history": {
+      "loading": "Loading historical messages...",
+      "loadMore": "Load more historical messages",
+      "noMessages": "No historical messages",
+      "loadFailed": "Failed to load historical messages",
+      "loadMoreFailed": "Failed to load more messages",
+      "retry": "Retry",
+      "yesterday": "Yesterday",
+      "daysAgo": "{{days}} days ago",
+      "loadingNewer": "Loading...",
+      "weekday": {
+        "sunday": "Sunday",
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday"
+      }
+    },
+    "empty": {
+      "selectConversation": "Select a chat to start conversation"
+    },
+    "list": {
+      "searchPlaceholder": "Search",
+      "searchAria": "Search conversations",
+      "tagFilter": {
+        "button": "Tag filter",
+        "add": "Add filter tag",
+        "edit": "Edit filter tags",
+        "remove": "Remove tag",
+        "searchPlaceholder": "Search tags",
+        "clear": "Clear",
+        "loading": "Loading tags...",
+        "empty": "No tags"
+      },
+      "tabs": {
+        "mine": "Mine",
+        "unassigned": "Unassigned",
+        "recent": "Recently Online",
+        "all": "Completed",
+        "manual": "Manual Service"
+      },
+      "waiting": {
+        "justNow": "Just now",
+        "minutes": "{{count}}m",
+        "hours": "{{count}}h",
+        "hoursMinutes": "{{h}}h {{m}}m",
+        "days": "{{count}}d",
+        "daysHours": "{{d}}d {{h}}h",
+        "status": "Waiting"
+      }
+    },
+    "header": {
+      "staffFallback": "Agent",
+      "visitorFallback": "Visitor {{suffix}}",
+      "agentFallback": "AI Employee",
+      "teamFallback": "AI Employee Team",
+      "agentTooltip": "AI Employee Chat",
+      "endChat": "End Chat",
+      "transfer": "Transfer",
+      "transferTooltip": "Transfer to another agent",
+      "transferSuccess": "Transferred to {{name}}",
+      "transferError": "Transfer failed",
+      "transferTo": "Transfer to",
+      "noStaffAvailable": "No staff available",
+      "loadingStaff": "Loading..."
+    },
+    "suggestions": {
+      "label": "✨ Suggestions:"
+    },
+    "send": {
+      "platformErrorLog": "Platform message send failed",
+      "platformError": "Platform message send failed, please try again later",
+      "wsNotConnected": "WebSocket is not connected, please check network",
+      "wsFailed": "WebSocket send failed, please check network connection",
+      "failedLogPrefix": "Failed to send message:"
+    },
+    "search": {
+      "locateFailedTitle": "Unable to locate message",
+      "locateFailedDesc": "This message may have been deleted or is temporarily unavailable"
+    },
+    "messages": {
+      "sending": "Sending...",
+      "sendFailedTitle": "Send Failed",
+      "image": {
+        "previewAria": "Preview image",
+        "alt": "Image",
+        "uploading": "Uploading",
+        "uploadFailed": "Upload failed"
+      },
+      "file": {
+        "aria": "File",
+        "placeholder": "[File]",
+        "uploadFailedRetry": "Upload failed, click to retry",
+        "uploadingWithPercent": "Uploading {{percent}}%",
+        "download": "Download"
+      },
+      "stream": {
+        "timeout": "AI response timed out",
+        "error": "AI response generation failed",
+        "cancelled": "AI response cancelled",
+        "force": "AI response forcefully terminated"
+      },
+      "system": {
+        "staffAssigned": "You have been connected to customer service. Agent {0} will assist you.",
+        "sessionTransferred": "Session transferred. Agent {0} has transferred you to Agent {1}.",
+        "sessionClosed": "Session ended. Agent {0} has completed the service.",
+        "sessionClosedEmpty": "Session ended."
+      }
+    },
+    "input": {
+      "placeholder": "Type a message...",
+      "disabled": {
+        "placeholder": "AI assistant enabled, manual input disabled",
+        "tooltip": "AI assistant enabled, manual input disabled",
+        "cannotSendTooltip": "AI assistant enabled, manual send disabled"
+      },
+      "emoji": {
+        "aria": "Open emoji picker",
+        "title": "Insert emoji"
+      },
+      "screenshot": {
+        "aria": "Screenshot paste instructions",
+        "title": "Screenshot"
+      },
+      "image": {
+        "aria": "Upload image",
+        "title": "Send image"
+      },
+      "file": {
+        "aria": "Upload file",
+        "title": "Send file",
+        "remove": "Remove file"
+      },
+      "ai": {
+        "label": "AI Assistant",
+        "toggleAria": "Toggle AI assistant",
+        "enabled": "AI enabled",
+        "disabled": "AI disabled",
+        "enabledTitle": "AI Enabled",
+        "enabledMessage": "Visitor AI assistant has been enabled",
+        "disabledTitle": "AI Disabled",
+        "disabledMessage": "Visitor AI assistant has been disabled"
+      },
+      "screenshotTip": {
+        "aria": "Screenshot send tip",
+        "title": "Screenshot Send Tip",
+        "line1": "You can use QQ, WeChat, or system screenshot tools to take a screenshot,",
+        "line2": {
+          "prefix": "then press",
+          "suffix": "in the message input box to paste and send the image"
+        }
+      },
+      "preview": {
+        "imageAlt": "Preview image {{index}}",
+        "removeAria": "Remove preview"
+      },
+      "upload": {
+        "failed": "Upload failed"
+      },
+      "errors": {
+        "images": {
+          "unsupportedTypeTitle": "Unsupported file type",
+          "unsupportedTypeDesc": "Only image files are supported (jpg/png/gif/webp)",
+          "limitReachedTitle": "Image limit reached (9 images)",
+          "limitReachedDesc": "Maximum 9 images allowed",
+          "tooManyTitle": "Maximum 9 images allowed",
+          "tooManyDesc": "Exceeded the number of images that can be added",
+          "limitReachedTitleSimple": "Image limit reached",
+          "limitReachedAddNine": "Maximum 9 images can be added",
+          "partialNotAddedTitle": "Some images not added",
+          "partialNotAddedDesc": "Added {{added}} images, skipped {{skipped}} (exceeds 9 image limit)"
+        },
+        "files": {
+          "onlyOne": "Only one file supported",
+          "removeCurrent": "Please remove current file first",
+          "skippedOther": "Added \"{{name}}\", skipped {{count}} other files"
+        },
+        "noConversationTitle": "Please select a conversation",
+        "noConversationDesc": {
+          "image": "Please select a conversation before sending images",
+          "file": "Please select a conversation before sending files",
+          "message": "Please select a conversation before sending messages"
+        },
+        "platformFailed": "Platform message send failed, please try again later",
+        "websocketFailed": "WebSocket send failed, please check network connection",
+        "websocketNotConnected": {
+          "image": "WebSocket not connected, cannot send image message",
+          "file": "WebSocket not connected, cannot send file message",
+          "message": "WebSocket not connected, cannot send message",
+          "richText": "WebSocket not connected, cannot send rich text message"
+        }
+      },
+      "shortcuts": {
+        "sendWithHint": "Enter to send • {{hint}}",
+        "newline": {
+          "mac": "⌘ + Enter to newline",
+          "windows": "Ctrl + Enter to newline"
+        }
+      },
+      "send": {
+        "label": "Send",
+        "sending": "Sending..."
+      },
+      "closed": "Conversation ended",
+      "notMyVisitor": "This visitor is assigned to {{name}}",
+      "otherAgent": "another agent"
+    }
+  },
+  "mcp": {
+      "source": {
+        "marketplace": "Tool Marketplace",
+        "custom": "Custom",
+        "unknown": "Unknown"
+      },
+      "author": {
+        "marketplace": "Tool Marketplace",
+        "customUser": "User Custom",
+        "unknown": "Unknown Source"
+      },
+      "search": {
+        "placeholder": "Search MCP tools..."
+      },
+      "categories": {
+        "all": "All",
+        "productivity": "Productivity",
+        "communication": "Communication",
+        "data": "Data Analysis",
+        "ai": "AI Tools",
+        "integration": "Integration",
+        "unknown": "Unknown Category"
+      },
+      "page": {
+        "customTool": "Custom Tool"
+      },
+      "tools": {
+        "addMcpTool": "Add MCP Tool",
+        "delete": {
+          "successTitle": "Deleted",
+          "successMessage": "Tool \"{{name}}\" has been deleted"
+        },
+        "confirmDelete": {
+          "title": "Confirm Delete",
+          "message": "Are you sure you want to delete tool \"{{name}}\"? This action cannot be undone."
+        },
+        "unknownAction": {
+          "title": "Unknown action",
+          "message": "Unsupported action type: {{type}}"
+        },
+        "actionFailed": {
+          "title": "Action failed",
+          "message": "An error occurred while performing {{type}} action"
+        },
+        "uninstall": {
+          "successTitle": "Uninstalled",
+          "successMessage": "Tool \"{{name}}\" has been uninstalled"
+        },
+        "toggle": {
+          "enabledTitle": "Enabled",
+          "enabledMessage": "Tool \"{{name}}\" has been enabled",
+          "disabledTitle": "Disabled",
+          "disabledMessage": "Tool \"{{name}}\" has been disabled"
+        },
+        "installedEmpty": {
+          "title": "No installed tools",
+          "description": "Click the \"Add MCP Tool\" button in the top-right to create your first tool",
+          "action": "Go to Tool Store"
+        },
+        "list": {
+          "emptyTitle": "No tools",
+          "emptyDescriptionAll": "Click \"Add Tool\" to add your first MCP tool",
+          "emptyDescriptionCategory": "No tools under category \"{{category}}\"",
+          "emptyAction": "Start adding tools"
+        },
+        "endpoint": "Endpoint",
+        "noDescription": "No description",
+        "endpointCopied": "Endpoint copied to clipboard",
+        "copyEndpointFailed": "Failed to copy endpoint",
+        "edit": {
+          "title": "Edit Tool",
+          "message": "Edit functionality for tool \"{{name}}\" is coming soon",
+          "notFound": "Tool Not Found",
+          "notFoundMessage": "Unable to find detailed information for this tool"
+        }
+      },
+      "addMcpToolModal": {
+        "title": "Add MCP Tool",
+        "fields": {
+          "name": "Tool Name",
+          "description": "Tool Description",
+          "transportType": "Transport Type",
+          "endpoint": "Endpoint",
+          "config": "Configuration"
+        },
+        "placeholders": {
+          "name": "e.g., weather-api",
+          "description": "Brief description of the tool's functionality",
+          "endpoint": "e.g., https://api.example.com/mcp",
+          "config": "{\"key\": \"value\"}"
+        },
+        "hints": {
+          "config": "Please enter valid JSON format configuration"
+        },
+        "errors": {
+          "nameRequired": "Please enter tool name",
+          "invalidName": "Tool name can only contain letters, numbers, underscores and hyphens",
+          "endpointRequired": "Please enter endpoint",
+          "invalidJson": "Configuration must be valid JSON format",
+          "noProject": "No project selected"
+        },
+        "success": {
+          "title": "Added Successfully",
+          "message": "{{name}} has been successfully added"
+        },
+        "error": {
+          "title": "Add Failed",
+          "message": "Failed to add MCP tool, please try again later"
+        }
+      },
+      "editMcpToolModal": {
+        "title": "Edit MCP Tool",
+        "fields": {
+          "name": "Tool Name",
+          "description": "Tool Description",
+          "transportType": "Transport Type",
+          "endpoint": "Endpoint",
+          "toolType": "Tool Type"
+        },
+        "placeholders": {
+          "name": "e.g., weather-api",
+          "description": "Brief description of the tool's functionality",
+          "endpoint": "e.g., https://api.example.com/mcp"
+        },
+        "hints": {
+          "toolTypeReadonly": "Tool type cannot be modified"
+        },
+        "errors": {
+          "nameRequired": "Please enter tool name",
+          "invalidName": "Tool name can only contain letters, numbers, underscores and hyphens",
+          "endpointRequired": "Please enter endpoint"
+        },
+        "success": {
+          "title": "Updated Successfully",
+          "message": "{{name}} has been successfully updated"
+        },
+        "error": {
+          "title": "Update Failed",
+          "message": "Failed to update MCP tool, please try again later"
+        }
+      },
+      "selectModal": {
+        "title": "Select Tools",
+        "searchPlaceholder": "Search tools...",
+        "loading": "Loading MCP tools...",
+        "loadFailedDesc": "Unable to load MCP tool list, please try again later",
+        "retryFailedTitle": "Retry Failed",
+        "retryFailedDesc": "Unable to load MCP tool list, please check your network connection",
+        "noMatch": "No matching MCP tools found",
+        "configTool": "Configure Tool",
+        "manageTools": "Manage MCP Tools",
+        "confirmSelection": "Confirm Selection ({{count}})"
+      },
+      "config": {
+        "title": "Tool Configuration",
+        "info": "Tool Information",
+        "parameters": "Configuration Parameters",
+        "noParams": "This tool has no configurable parameters",
+        "placeholders": {
+          "array": "Separate multiple values with commas",
+          "required": "Required",
+          "optional": "Optional"
+        },
+        "validation": {
+          "required": "This field is required",
+          "number": "Please enter a valid number"
+        },
+        "save": "Save Configuration"
+      }
+    },
+  "platforms": {
+    "list": {
+      "title": "Platforms",
+      "addPlatform": "Add Platform",
+      "defaultName": "New Platform",
+      "loading": "Loading platform list...",
+      "loadFailedTitle": "Load Failed",
+      "retry": "Retry",
+      "retrying": "Retrying...",
+      "emptyTitle": "No Platforms",
+      "emptyDescription": "Click the button above to add a platform",
+      "status": {
+        "connected": "Connected",
+        "error": "Connection Failed",
+        "pending": "Pending Configuration",
+        "notConfigured": "Not Configured",
+        "unsupported": "Coming Soon"
+      },
+      "toast": {
+        "createSuccessTitle": "Created Successfully",
+        "createSuccessMessage": "Platform \"{{name}}\" has been created"
+      }
+    },
+    "typeSelector": {
+      "title": "Select Platform Type",
+      "loading": "Loading available platform types...",
+      "loadError": "Failed to load platform types, please try again later",
+      "loadFailed": "Load Failed",
+      "emptyTypes": "No available platform types",
+      "unsupported": "Not Supported"
+    },
+    "config": {
+      "basic": {
+        "title": "Basic Settings",
+        "platformName": "Platform Name",
+        "platformDesc": "Platform Description (Optional)",
+        "descPlaceholder": "Describe the purpose of this platform",
+        "platformIcon": "Platform Icon",
+        "selectUploadIcon": "Select/Upload Icon",
+        "iconHint": "Choose an icon to display in the platform list."
+      },
+      "webhookIncoming": {
+        "title": "Webhook Integration (Receive Messages)",
+        "viewDocs": "View Integration Docs",
+        "copyUrl": "Copy URL",
+        "urlHint": "Configure this URL in your system to receive messages from your system.",
+        "toggleSecret": "Show/Hide Secret",
+        "copySecret": "Copy Secret",
+        "regenerateSecret": "Regenerate Secret",
+        "secretHint": "Used to verify the signature of incoming requests for security."
+      },
+      "webhookOutgoing": {
+        "title": "Webhook Push (Send Messages)",
+        "yourUrl": "Your Receiving URL",
+        "urlHint": "When customer service replies, we will POST the message to this URL.",
+        "authToken": "Authentication Token (Optional)",
+        "tokenPlaceholder": "e.g., Bearer your_secret_token",
+        "tokenHint": "If your receiving URL requires authentication, fill in here (e.g., Authorization Header value)."
+      },
+      "apiAccess": {
+        "title": "API Access (Optional)",
+        "placeholder": "[API Key/Secret management and documentation link placeholder]",
+        "description": "Alternatively, you can send and receive messages by calling our open API. Please refer to the developer documentation for details."
+      },
+      "placeholder": {
+        "title": "Select Platform",
+        "description": "Please select a platform from the left list to configure"
+      },
+      "header": {
+        "title": "{{name}} Configuration",
+        "enablePlatform": "Enable Platform"
+      },
+      "generic": {
+        "title": "Platform Configuration",
+        "comingSoon": "Specific configuration options for this platform will be provided in future versions.",
+        "currentStatus": "Current Status: {{status}}"
+      }
+    },
+    "website": {
+      "label": "Official Website",
+      "header": {
+        "title": "Website Widget Configuration",
+        "subtitle": "Adjust the configuration on the left, the preview on the right will update in real-time"
+      },
+      "buttons": {
+        "delete": "Delete",
+        "deleting": "Deleting...",
+        "enable": "Enable",
+        "disable": "Disable",
+        "enabling": "Enabling...",
+        "disabling": "Disabling...",
+        "save": "Save",
+        "saving": "Saving...",
+        "show": "Show",
+        "hide": "Hide",
+        "copy": "Copy",
+        "regenerate": "Regenerate",
+        "remove": "Remove",
+        "upload": "Click to Upload",
+        "testIntegration": "Test Integration",
+        "downloadExample": "Download Example"
+      },
+      "download": {
+        "hint": "Download a complete integration example file with pre-configured API Key",
+        "success": "Download Successful",
+        "successDesc": "Example file has been downloaded, open it in a browser to see the result",
+        "demoTitle": "Widget Demo",
+        "welcomeTitle": "Welcome!",
+        "welcomeDesc": "Your TGO chat widget is now integrated! Click the chat button in the bottom-right corner to start a conversation.",
+        "integrationCode": "Integration Code",
+        "securityWarning": "Security Notice: This file contains your API key. Do not share it publicly or commit it to public repositories."
+      },
+      "form": {
+        "name": "Name",
+        "namePlaceholder": "Please enter platform name",
+        "widgetTitle": "Visitor Window Title",
+        "themeColor": "Theme Color",
+        "logo": "Logo",
+        "logoUploading": "Uploading...",
+        "logoHint": "Recommended size: 72x72 pixels. Supports PNG/JPG/SVG, max 2MB.",
+        "clickUpload": "Click to Upload",
+        "welcomeMessage": "Welcome Message",
+        "position": "Position",
+        "positionBottomRight": "Bottom Right",
+        "positionBottomLeft": "Bottom Left",
+        "positionTopRight": "Top Right",
+        "positionTopLeft": "Top Left",
+        "displayMode": "Default Display Mode",
+        "displayModeSmall": "Small Window",
+        "displayModeBig": "Big Window",
+        "apiKey": "API Key",
+        "apiKeyPlaceholder": "No API Key",
+        "apiKeyHint": "Authentication identifier for website integration script, please keep it safe."
+      },
+      "embed": {
+        "title": "Website Integration Code",
+        "description": "Copy and paste the following code into the <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code> of your website:",
+        "instruction": "Copy and paste the following code into the <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code> of your website:"
+      },
+      "messages": {
+        "saveSuccess": "Saved Successfully",
+        "saveSuccessMessage": "Platform information has been updated",
+        "platformDisabled": "Platform Disabled",
+        "platformEnabled": "Platform Enabled",
+        "logoSizeError": "Image size cannot exceed 2MB",
+        "logoTypeError": "Only image files are supported",
+        "cropError": "Unable to open cropper",
+        "logoRemoved": "Removed",
+        "logoRemovedMessage": "Logo has been cleared",
+        "logoRemoveError": "Removing logo is not currently supported, please upload a new image to overwrite",
+        "apiKeyCopied": "Copied",
+        "apiKeyCopiedMessage": "API Key has been copied to clipboard",
+        "regenerateConfirm": "Are you sure you want to regenerate the API Key? Existing embed scripts will need to be updated.",
+        "apiKeyRegenerated": "Updated",
+        "apiKeyRegeneratedMessage": "API Key has been regenerated",
+        "embedCodeCopied": "Copied",
+        "embedCodeCopiedMessage": "Embed code has been copied to clipboard",
+        "uploadSuccess": "Upload Successful",
+        "uploadSuccessMessage": "Logo has been updated",
+        "uploadError": "Upload failed, please try again",
+        "deleteSuccess": "Platform Deleted",
+        "deleteSuccessMessage": "Platform has been deleted"
+      },
+      "confirm": {
+        "deleteTitle": "Delete Platform",
+        "deleteMessage": "Are you sure you want to delete this platform?",
+        "confirmText": "Delete",
+        "cancelText": "Cancel"
+      },
+      "defaults": {
+        "widgetTitle": "Welcome",
+        "welcomeMessage": "Hello! How can I help you?",
+        "displayMode": "small"
+      }
+    },
+    "wechat": {
+      "label": "WeChat OA"
+    },
+    "whatsapp": {
+      "label": "WhatsApp"
+    },
+    "telegram": {
+      "label": "Telegram"
+    },
+    "sms": {
+      "label": "SMS"
+    },
+    "facebook": {
+      "label": "Facebook"
+    },
+    "instagram": {
+      "label": "Instagram"
+    },
+    "twitter": {
+      "label": "Twitter"
+    },
+    "linkedin": {
+      "label": "LinkedIn"
+    },
+    "discord": {
+      "label": "Discord"
+    },
+    "slack": {
+      "label": "Slack"
+    },
+    "teams": {
+      "label": "Microsoft Teams"
+    },
+    "webchat": {
+      "label": "Web Chat"
+    },
+    "phone": {
+      "label": "Phone"
+    },
+    "tiktok": {
+      "label": "TikTok"
+    },
+    "unknown": {
+      "label": "Unknown Platform"
+    },
+    "wecom": {
+      "label": "WeCom",
+      "header": {
+        "title": "{{name}} - WeCom Configuration",
+        "subtitle": "Configure credentials and callbacks required for WeCom integration."
+      },
+      "buttons": {
+        "delete": "Delete",
+        "deleting": "Deleting...",
+        "enable": "Enable",
+        "disable": "Disable",
+        "enabling": "Enabling...",
+        "disabling": "Disabling...",
+        "save": "Save",
+        "saving": "Saving...",
+        "show": "Show",
+        "hide": "Hide",
+        "copy": "Copy"
+      },
+      "form": {
+        "platformName": "Platform Name",
+        "platformNamePlaceholder": "Please enter platform name",
+        "corpId": "Corp ID",
+        "corpIdPlaceholder": "e.g., ww1234567890abcdef",
+        "corpIdHint": "Can be found in 'My Enterprise' - 'Enterprise Information'.",
+        "agentId": "Agent ID",
+        "agentIdPlaceholder": "e.g., 1000002",
+        "agentIdHint": "Obtained from the application details page in WeCom admin console.",
+        "appSecret": "App Secret",
+        "appSecretPlaceholder": "Please enter App Secret",
+        "appSecretHint": "Credential for calling WeCom API, please keep it safe.",
+        "token": "Token",
+        "tokenPlaceholder": "Token for callback verification",
+        "tokenHint": "Keep consistent with the Token in WeCom callback configuration.",
+        "encodingAESKey": "EncodingAESKey",
+        "encodingAESKeyPlaceholder": "43-character message encryption key",
+        "encodingAESKeyHint": "Used when message encryption/decryption mode is compatible/secure mode.",
+        "callbackUrl": "Callback URL",
+        "callbackUrlPlaceholder": "Callback URL will be generated after platform creation",
+        "callbackUrlHint": "Configure this URL in WeCom 'Server Configuration' callback address."
+      },
+      "guide": {
+        "title": "WeCom Configuration Guide",
+        "overview": "Quick Overview",
+        "overviewText": "Complete the following four steps: ① Find Corp ID → ② Get Agent ID/Secret → ③ Configure server callback (URL/Token/EncodingAESKey) → ④ Save and test.",
+        "step1Title": "1️⃣ Find Corp ID",
+        "step1Item1": "Log in to <a class=\"text-blue-600 hover:underline\" href=\"https://work.weixin.qq.com/wework_admin/frame\" target=\"_blank\" rel=\"noreferrer\">WeCom Admin Console</a>.",
+        "step1Item2": "Go to 'My Enterprise' → 'Enterprise Information' page.",
+        "step1Item3": "Copy 'Corp ID' and paste it into the left form 'Corp ID'.",
+        "step1Example": "Example: ww1234567890abcdef",
+        "step2Title": "2️⃣ Get Agent ID and App Secret",
+        "step2Item1": "Select 'Application Management' on the left side of the console, open your self-built application.",
+        "step2Item2": "You can see 'AgentId' on the application details page.",
+        "step2Item3": "Click 'Secret' to display or reset, copy and fill in the left form 'App Secret'.",
+        "step2SecurityTitle": "Security Tips",
+        "step2SecurityText": "Please keep the Secret safe and do not leak it; production environments should use minimum permissions and regular rotation.",
+        "step3Title": "3️⃣ Configure Server Callback (URL / Token / EncodingAESKey)",
+        "step3Item1": "In 'Application Management' → Your Application → 'Receive Messages', click 'Settings' to enter 'Server Configuration'.",
+        "step3Item2": "Callback URL: Copy the callback URL from the left form (read-only) and paste it into the console;",
+        "step3Item3": "Token: Customize any string and ensure it is consistent with the left form;",
+        "step3Item4": "EncodingAESKey: Click to generate a 43-character key and copy it to the left form;",
+        "step3Item5": "Message encryption/decryption mode: It is recommended to select 'Compatible Mode' or 'Secure Mode'.",
+        "step3ExampleTitle": "Example Placeholder (For Reference Only)",
+        "step3Note": "After saving, WeCom will perform URL verification, please ensure the server correctly returns the verification response.",
+        "step4Title": "4️⃣ Common Issues and Troubleshooting",
+        "step4Item1": "URL verification failed: Check if your callback service is publicly accessible and if the TLS certificate is valid.",
+        "step4Item2": "Message decryption failed: Confirm that EncodingAESKey is correct and does not contain extra spaces.",
+        "step4Item3": "403/Permission issues: Confirm that the application is enabled and granted the required permissions; regenerate Secret if necessary.",
+        "docsLink": "WeCom Message Callback Development Documentation",
+        "bestPracticesTitle": "Best Practices",
+        "bestPracticesItem1": "Store Secret in a key management service (such as Vault, KMS) to avoid appearing in plain text in the code repository.",
+        "bestPracticesItem2": "Use different Token/AESKey for different environments (development/testing/production).",
+        "bestPracticesItem3": "Regularly rotate Secret and complete server-side configuration updates before expiration."
+      },
+      "messages": {
+        "saveSuccess": "Saved Successfully",
+        "saveSuccessMessage": "WeCom platform configuration has been updated",
+        "platformDisabled": "Platform Disabled",
+        "platformEnabled": "Platform Enabled",
+        "callbackUrlCopied": "Callback URL Copied",
+        "deleteSuccess": "Platform Deleted",
+        "deleteSuccessMessage": "Platform has been deleted"
+      },
+      "confirm": {
+        "deleteTitle": "Delete Platform",
+        "deleteMessage": "Are you sure you want to delete this platform?",
+        "confirmText": "Delete",
+        "cancelText": "Cancel"
+      }
+    },
+    "email": {
+      "label": "Email",
+      "header": {
+        "title": "Email Platform Configuration",
+        "subtitle": "Configure IMAP (receiving) and SMTP (sending) information."
+      },
+      "buttons": {
+        "delete": "Delete",
+        "deleting": "Deleting...",
+        "enable": "Enable",
+        "disable": "Disable",
+        "enabling": "Enabling...",
+        "disabling": "Disabling...",
+        "save": "Save",
+        "saving": "Saving...",
+        "show": "Show",
+        "hide": "Hide",
+        "testConnection": "Test Connection",
+        "testing": "Testing..."
+      },
+      "form": {
+        "name": "Platform Name",
+        "namePlaceholder": "Enter platform name",
+        "emailAddress": "Email Address",
+        "emailPlaceholder": "you@example.com",
+        "emailPassword": "Email Password",
+        "passwordPlaceholder": "Enter email password or authorization code",
+        "passwordHint": "Gmail/QQ Mail requires app-specific password or authorization code",
+        "autoDetected": "Auto-detected as",
+        "showAdvanced": "Show Advanced Settings",
+        "hideAdvanced": "Hide Advanced Settings",
+        "imapSection": "IMAP Configuration (Receiving Emails)",
+        "imapHost": "IMAP Server",
+        "imapHostPlaceholder": "e.g., imap.gmail.com",
+        "imapPort": "IMAP Port",
+        "imapPortPlaceholder": "Default 993 (SSL) or 143 (non-SSL)",
+        "imapUsername": "Email Address",
+        "imapUsernamePlaceholder": "you@example.com",
+        "imapPassword": "Email Password",
+        "imapPasswordPlaceholder": "Enter email password or authorization code",
+        "useSsl": "Use SSL",
+        "smtpSection": "SMTP Configuration (Sending Emails)",
+        "useSameCredentials": "Use Same Credentials for SMTP (Recommended)",
+        "smtpHost": "SMTP Server",
+        "smtpHostPlaceholder": "e.g., smtp.gmail.com",
+        "smtpPort": "SMTP Port",
+        "smtpPortPlaceholder": "Default 465 (SSL) or 587 (TLS)",
+        "smtpUsername": "SMTP Username",
+        "smtpUsernamePlaceholder": "Usually same as email address",
+        "smtpPassword": "SMTP Password",
+        "smtpPasswordPlaceholder": "Enter SMTP password",
+        "smtpPasswordSame": "Using IMAP password",
+        "smtpUseSsl": "Use SSL (Port 465)",
+        "smtpUseTls": "Use TLS/STARTTLS (Port 587, Recommended)"
+      },
+      "guide": {
+        "title": "Email Platform Configuration Guide (IMAP Receiving + SMTP Sending)",
+        "tipTitle": "Tip",
+        "tipMessage": "IMAP is for receiving emails, SMTP is for sending emails. Common ports: <span class=\"font-mono\">IMAP SSL=993</span>, <span class=\"font-mono\">SMTP SSL=465</span>, <span class=\"font-mono\">SMTP TLS=587</span>.",
+        "section1Title": "1. Get Email Credentials (General Steps)",
+        "section1Step1": "Log in to your email service provider account (Gmail / Outlook / QQ Mail, etc.).",
+        "section1Step2": "Go to 'Account Settings' or 'Security' page, enable IMAP/SMTP service (if required).",
+        "section1Step3": "If required by the service provider (such as Gmail/QQ), enable two-step verification and create an 'App-specific password'.",
+        "section1Step4": "Fill in IMAP and SMTP configuration in the left form. If using same credentials, check 'Use Same Credentials for SMTP'.",
+        "section1Step5": "Click 'Save' in the upper right corner, then test sending and receiving emails.",
+        "section2Title": "2. Common Email Servers and Ports",
+        "tableProvider": "Provider",
+        "tableImapServer": "IMAP Server",
+        "tableImapPort": "IMAP Port",
+        "tableSmtpServer": "SMTP Server",
+        "tableSmtpPort": "SMTP Port",
+        "tableQQMail": "QQ Mail",
+        "section3Title": "3. Detailed Provider Configuration",
+        "gmailTitle": "Gmail (App-specific Password)",
+        "gmailStep1": "Go to Google Account Security Center → Two-step Verification → App-specific Password; confirm IMAP/SMTP is enabled.",
+        "gmailStep2": "IMAP server: <code class=\"px-1 bg-gray-100 rounded\">imap.gmail.com</code>, port: 993 (SSL).",
+        "gmailStep3": "SMTP server: <code class=\"px-1 bg-gray-100 rounded\">smtp.gmail.com</code>, port: 465 (SSL) or 587 (TLS).",
+        "gmailStep4": "Username is your Gmail address; password uses app-specific password (same for IMAP and SMTP).",
+        "gmailPasswordPlaceholder": "App-specific password",
+        "gmailDocs": "Gmail Official Guide",
+        "outlookTitle": "Outlook (Office 365)",
+        "outlookStep1": "IMAP server: <code class=\"px-1 bg-gray-100 rounded\">outlook.office365.com</code>, port: 993 (SSL).",
+        "outlookStep2": "SMTP server: <code class=\"px-1 bg-gray-100 rounded\">smtp.office365.com</code>, port: 587 (TLS).",
+        "outlookStep3": "Username is usually the email address; IMAP and SMTP use same credentials.",
+        "outlookDocs": "Microsoft Documentation",
+        "qqTitle": "QQ Mail (Enable IMAP/SMTP Required)",
+        "qqStep1": "Go to QQ Mail Settings → Account → Enable 'IMAP/SMTP Service'.",
+        "qqStep2": "Get authorization code as password; IMAP server: <code class=\"px-1 bg-gray-100 rounded\">imap.qq.com</code>, port: 993.",
+        "qqStep3": "SMTP server: <code class=\"px-1 bg-gray-100 rounded\">smtp.qq.com</code>, port: 465 (SSL) or 587 (TLS).",
+        "qqStep4": "IMAP and SMTP use the same authorization code.",
+        "qqPasswordPlaceholder": "Authorization code",
+        "qqDocs": "QQ Mail Help",
+        "troubleshootTitle": "Troubleshooting Guide",
+        "troubleshootItem1": "Confirm that the service provider has enabled IMAP/SMTP service; Gmail/QQ need to enable in settings and use app-specific password/authorization code.",
+        "troubleshootItem2": "IMAP: prioritize SSL (port 993); SMTP: recommend TLS (port 587) or SSL (port 465).",
+        "troubleshootItem3": "Verify that the email address (username) and password are correct, pay attention to case and spaces.",
+        "troubleshootItem4": "If 'Use Same Credentials' is checked, ensure IMAP and SMTP use the same username and password.",
+        "troubleshootItem5": "If still failing, check if you need to allow third-party client access in the service provider backend.",
+        "moreInfo": "More documentation: Official documentation and support pages of each email service provider."
+      },
+      "messages": {
+        "saveSuccess": "Saved Successfully",
+        "saveSuccessMessage": "Email platform configuration has been saved",
+        "enabled": "Platform Enabled",
+        "disabled": "Platform Disabled",
+        "deleteSuccess": "Platform Deleted",
+        "deleteSuccessMessage": "Platform has been deleted",
+        "testSuccess": "Connection Test Successful",
+        "testSuccessMessage": "Both IMAP and SMTP connections are working",
+        "testFailed": "Connection Test Failed",
+        "testValidationError": "Please fill in all required email configuration fields"
+      },
+      "confirm": {
+        "deleteTitle": "Delete Platform",
+        "deleteMessage": "Are you sure you want to delete this platform?",
+        "confirmText": "Delete",
+        "cancelText": "Cancel"
+      }
+    },
+    "douyin": {
+      "label": "Douyin",
+      "title": "{{name}} - Douyin Platform Configuration",
+      "subtitle": "Configure Douyin Open Platform credentials and callback information.",
+      "buttons": {
+        "delete": "Delete",
+        "deleting": "Deleting...",
+        "enable": "Enable",
+        "disable": "Disable",
+        "enabling": "Enabling...",
+        "disabling": "Disabling...",
+        "save": "Save",
+        "saving": "Saving...",
+        "show": "Show",
+        "hide": "Hide"
+      },
+      "form": {
+        "platformName": "Platform Name",
+        "platformNamePlaceholder": "Please enter platform name",
+        "appId": "App ID",
+        "appIdPlaceholder": "e.g., your_app_id",
+        "appSecret": "App Secret",
+        "appSecretPlaceholder": "Please enter App Secret",
+        "clientKey": "Client Key",
+        "clientKeyPlaceholder": "e.g., your_client_key",
+        "clientSecret": "Client Secret",
+        "clientSecretPlaceholder": "Please enter Client Secret",
+        "callbackUrl": "Callback URL",
+        "callbackUrlPlaceholder": "Callback URL will be generated after platform creation",
+        "callbackUrlHint": "Configure this URL in Douyin Open Platform 'Callback Address' settings.",
+        "authScope": "Authorization Scope",
+        "authScopePlaceholder": "e.g., user_info,video.list",
+        "authScopeHint": "Separate multiple permissions with commas, e.g., user_info,video.list."
+      },
+      "guide": {
+        "title": "Douyin Open Platform Configuration Guide",
+        "overview": "Quick Overview",
+        "overviewText": "Complete the following four steps: ① Register Open Platform account → ② Create application and get credentials → ③ Configure callback address → ④ Save and test.",
+        "step1Title": "1️⃣ Register Douyin Open Platform Account",
+        "step1Item1": "Visit <a class=\"text-blue-600 hover:underline\" href=\"https://developer.open-douyin.com/\" target=\"_blank\" rel=\"noreferrer\">Douyin Open Platform</a> and complete account registration and entity authentication (if required).",
+        "step1Item2": "Log in to the console and complete developer information.",
+        "step2Title": "2️⃣ Create Application and Get Credentials",
+        "step2Item1": "Create a new application in the console and note down the App ID and App Secret.",
+        "step2Item2": "Get Client Key and Client Secret in application settings.",
+        "step2Item3": "Select and enable the required authorization scope (Scope) according to business needs.",
+        "step3Title": "3️⃣ Configure Callback Address",
+        "step3Item1": "Configure the callback URL in the Open Platform 'Callback Settings': use the read-only callback URL above.",
+        "step3Item2": "Ensure the server is publicly accessible and correctly handles verification requests.",
+        "step4Title": "4️⃣ Common Issues and Troubleshooting",
+        "step4Item1": "Callback verification failed: Check if the callback URL is accessible and if the TLS certificate is valid.",
+        "step4Item2": "Insufficient permissions: Confirm that the required Scope has been enabled and authorized in the Open Platform.",
+        "step4Item3": "Credential error: Verify that App ID/Secret and Client Key/Secret are entered correctly.",
+        "bestPracticesTitle": "Best Practices",
+        "bestPracticesItem1": "Store keys in a secure key management service (such as KMS/Vault) to avoid appearing in the code repository.",
+        "bestPracticesItem2": "Use different callbacks and credentials for different environments (development/testing/production), with minimum authorization as needed.",
+        "bestPracticesItem3": "Regularly rotate keys and minimize permission scope (Scope)."
+      },
+      "messages": {
+        "saveSuccess": "Saved Successfully",
+        "saveSuccessMessage": "Douyin platform configuration has been saved",
+        "platformDisabled": "Platform Disabled",
+        "platformEnabled": "Platform Enabled",
+        "deleteSuccess": "Platform Deleted",
+        "deleteSuccessMessage": "Platform has been deleted"
+      },
+      "confirm": {
+        "deleteTitle": "Delete Platform",
+        "deleteMessage": "Are you sure you want to delete this platform?",
+        "confirmText": "Delete",
+        "cancelText": "Cancel"
+      }
+    },
+    "custom": {
+      "label": "Custom Platform",
+      "title": "Custom Platform Configuration",
+      "subtitle": "Configure API information and callback URL for third-party program integration.",
+      "configSection": "Configuration",
+      "platformName": "Platform Name",
+      "platformNamePlaceholder": "Enter platform name",
+      "nameSaved": "Platform name saved successfully",
+      "chatUrl": "Chat API Endpoint",
+      "chatUrlHint": "Third-party programs call this address to send conversation messages.",
+      "apiKeyHint": "Use X-Platform-API-Key in the request header for authentication.",
+      "apiKey": "API Key",
+      "callbackUrl": "Callback URL",
+      "callbackUrlHint": "When customer service replies to messages, the system will push messages to this address",
+      "callbackUrlPlaceholder": "https://your-domain.com/webhook/callback",
+      "callbackSaved": "Callback URL saved successfully",
+      "callbackSaveFailed": "Failed to save callback URL",
+      "invalidUrl": "Invalid URL format",
+      "invalidUrlHint": "Please enter a valid HTTP/HTTPS address",
+      "notAvailable": "Not Available",
+      "copied": "{{label}} copied to clipboard",
+      "copyFailed": "Copy failed",
+      "disabled": "Platform disabled",
+      "enabled": "Platform enabled",
+      "toggleFailed": "Failed to toggle status",
+      "confirmRegenerate": "Are you sure you want to regenerate the API key? The old key will be invalidated immediately.",
+      "regenerated": "API key regenerated successfully",
+      "regenerateFailed": "Failed to regenerate API key",
+      "regenerate": "Regenerate",
+      "deleted": "Platform deleted",
+      "deleteFailed": "Failed to delete platform",
+      "deleteTitle": "Delete Platform",
+      "deleteMessage": "Are you sure you want to delete platform \"{{name}}\"? This action cannot be undone.",
+      "code": "Code",
+      "saveSuccess": "Saved successfully",
+      "integration": {
+        "title": "API Integration Information",
+        "guide": "Integration Guide",
+        "chatApi": "Chat API (Send Messages to TGO)",
+        "endpoint": "API Endpoint",
+        "authentication": "Authentication",
+        "authDesc": "Add the platform API key in the request header:",
+        "requiredParams": "Required Parameters",
+        "messagesDesc": "Array of conversation messages, compatible with OpenAI ChatGPT API format",
+        "userDesc": "Unique identifier of the third-party platform user (required)",
+        "optionalFeatures": "Optional Features",
+        "visitorRegisterDesc": "If you need to pass detailed user information (name, avatar, etc.), you can first call the visitor registration API:",
+        "simpleExample": "Simple Example",
+        "responseHandling": "Response Handling",
+        "responseHandlingDesc": "After calling the chat API, TGO system will return the AI assistant's reply. The third-party platform needs to send the returned reply content to the corresponding third-party user. The response format is compatible with OpenAI ChatGPT API, supporting both streaming and non-streaming responses.",
+        "callbackApi": "Callback API (Receive Customer Service Replies)",
+        "callbackConfig": "Configure Callback URL",
+        "callbackConfigDesc": "Configure your callback URL in the 'Callback URL' field on the left. When customer service replies to a message, the system will send a POST request to that address.",
+        "requestFormat": "Request Format",
+        "fieldDescriptions": "Field Descriptions",
+        "messageIdDesc": "Unique message identifier",
+        "callbackUserDesc": "Third-party user identifier (corresponds to the user field in the chat API)",
+        "contentDesc": "Customer service reply message content",
+        "timestampDesc": "Message timestamp (ISO 8601 format)",
+        "responseRequirement": "Response Requirement",
+        "responseRequirementDesc": "Please ensure the callback URL is publicly accessible and returns HTTP 200 status code to indicate successful receipt.",
+        "codeExamples": "Code Examples"
+      }
+    },
+    "aiSettings": {
+      "title": "AI Settings",
+      "optional": "Optional",
+      "agents": "AI Agents",
+      "loadingAgents": "Loading...",
+      "selectAgents": "Select AI Agents",
+      "noAgents": "No AI Agents Available",
+      "agentsHint": "Select AI agents assigned to this platform. Multiple selection supported.",
+      "agentsHintDefault": "If none selected, all AI agents will be used by default.",
+      "mode": "AI Mode",
+      "modeAuto": "Auto",
+      "modeAssist": "Assist",
+      "modeOff": "Off",
+      "modeAutoHint": "AI automatically handles all messages.",
+      "modeAssistHint": "Human first, AI takes over after timeout.",
+      "modeOffHint": "Disable AI, only human handles messages.",
+      "timeout": "Timeout (seconds)",
+      "timeoutPlaceholder": "e.g., 60",
+      "timeoutHint": "Time in seconds before AI takes over when there's no reply. Set to 0 to prevent AI takeover.",
+      "saveSuccess": "AI settings saved",
+      "saveButton": "Save AI Settings"
+    }
+  },
+  "setup": {
+    "title": "System Setup Wizard",
+    "subtitle": "Welcome to Tgo CS, let's configure your system",
+    "steps": {
+      "admin": "Admin Account",
+      "staff": "Human Agents",
+      "llm": "LLM Configuration",
+      "verify": "Verify Installation"
+    },
+    "stepIndicator": "Step {{current}} / {{total}}",
+    "admin": {
+      "title": "Setup Administrator Account",
+      "description": "Create a system administrator account for login and management",
+      "username": "Username",
+      "usernamePlaceholder": "Enter username (3-20 characters)",
+      "usernameFixed": "Default admin username, cannot be modified",
+      "password": "Password",
+      "passwordPlaceholder": "Enter password (at least 8 characters)",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Re-enter password",
+      "validation": {
+        "usernameRequired": "Username is required",
+        "usernameLength": "Username must be 3-20 characters",
+        "usernameFormat": "Username can only contain letters, numbers and underscores",
+        "passwordRequired": "Password is required",
+        "passwordLength": "Password must be at least 8 characters",
+        "passwordStrength": "Password must contain uppercase, lowercase and numbers",
+        "confirmPasswordRequired": "Please confirm your password",
+        "passwordMismatch": "Passwords do not match"
+      }
+    },
+    "staff": {
+      "title": "Configure Human Agents",
+      "description": "Add human agent accounts to handle customer inquiries",
+      "infoText": "When the AI agent cannot resolve user issues, the system will automatically assign the conversation to a human agent. Human agents can take over the conversation and provide more professional assistance.",
+      "staffItem": "Agent {{index}}",
+      "username": "Username",
+      "usernamePlaceholder": "Enter username (min 4, letters/numbers only)",
+      "name": "Name",
+      "namePlaceholder": "Enter agent name",
+      "password": "Password",
+      "passwordPlaceholder": "Enter password (at least 8 characters)",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Re-enter password",
+      "addStaff": "Add Agent",
+      "emptyHint": "Click the button above to add human agent accounts",
+      "requiredHint": "* At least one human agent is required",
+      "validation": {
+        "usernameRequired": "Username is required",
+        "usernameLength": "Username must be 4-50 characters",
+        "usernameFormat": "Username can only contain English letters and numbers (no spaces/special characters)",
+        "nameRequired": "Name is required",
+        "passwordRequired": "Password is required",
+        "passwordLength": "Password must be at least 8 characters",
+        "passwordMismatch": "Passwords do not match",
+        "atLeastOne": "Please add at least one human agent"
+      }
+    },
+    "llm": {
+      "title": "Configure AI Large Language Model",
+      "description": "Select your LLM provider, you can also configure this later in system settings",
+      "optional": "(Optional)",
+      "provider": "Provider",
+      "providerPlaceholder": "Select LLM provider",
+      "providers": {
+        "none": "Skip for now",
+        "openai": "OpenAI",
+        "azure": "Azure OpenAI",
+        "anthropic": "Anthropic",
+        "local": "Local Model",
+        "other": "Other"
+      },
+      "name": "Display Name",
+      "namePlaceholder": "e.g., My OpenAI Provider",
+      "apiKey": "API Key",
+      "apiKeyPlaceholder": "Enter API Key (e.g., sk-...)",
+      "apiEndpoint": "API Endpoint",
+      "apiEndpointPlaceholder": "Enter API Endpoint (optional)",
+      "model": "Model Name",
+      "modelPlaceholder": "e.g., gpt-4, claude-3-opus",
+      "testConnection": "Test Connection",
+      "testSuccess": "Connection test successful",
+      "testFailed": "Connection test failed",
+      "validation": {
+        "providerRequired": "Please select a provider",
+        "nameRequired": "Display name is required",
+        "apiKeyRequired": "API Key is required"
+      }
+    },
+    "verify": {
+      "title": "Installation Complete",
+      "description": "Verifying system configuration...",
+      "summary": "Installation Summary",
+      "adminCreated": "Administrator account created",
+      "staffCreated": "{{count}} human agent(s) created",
+      "staffNotConfigured": "Human agents not configured (can be set later)",
+      "llmConfigured": "LLM configured",
+      "llmNotConfigured": "LLM not configured (can be set later)",
+      "checks": {
+        "title": "System Checks",
+        "database": "Database Connection",
+        "admin": "Administrator Account",
+        "llm": "LLM Configuration",
+        "status": {
+          "success": "Success",
+          "failed": "Failed",
+          "skipped": "Skipped"
+        }
+      },
+      "verifying": "Verifying...",
+      "verifySuccess": "Verification successful",
+      "verifyFailed": "Verification failed",
+      "installationComplete": "Installation Complete!",
+      "redirecting": "Redirecting to login page..."
+    },
+    "buttons": {
+      "previous": "Previous",
+      "next": "Next",
+      "skip": "Skip",
+      "finish": "Finish Installation",
+      "retry": "Retry"
+    },
+    "errors": {
+      "createAdminFailed": "Failed to create administrator account",
+      "createStaffFailed": "Failed to create human agent",
+      "configureLLMFailed": "Failed to configure LLM",
+      "verifyFailed": "Failed to verify installation",
+      "alreadyInstalled": "System is already installed"
+    },
+    "success": {
+      "adminCreated": "Administrator account created successfully",
+      "llmConfigured": "LLM configured successfully"
+    },
+    "guard": {
+      "checking": "Checking system status...",
+      "serverError": "Unable to Connect to Server",
+      "retryButton": "Retry"
+    }
+  },
+  "onboarding": {
+    "title": "Quick Start",
+    "progress": "{{completed}}/{{total}} Completed",
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "dismiss": "Close",
+    "dismissButton": "Don't Show Again",
+    "welcome": {
+      "title": "Welcome to TGO",
+      "subtitle": "Complete the following steps to start your AI customer service journey",
+      "progress": "Progress",
+      "estimatedTime": "~2 min",
+      "skip": "Skip Guide",
+      "later": "Setup Later",
+      "start": "Start Setup"
+    },
+    "panel": {
+      "title": "Quick Start",
+      "progress": "Progress",
+      "skip": "Skip",
+      "viewAll": "View All"
+    },
+    "modal": {
+      "close": "Close"
+    },
+    "steps": {
+      "ai_provider": {
+        "title": "Configure AI Models",
+        "description": "Connect to AI providers like OpenAI, Qwen, etc."
+      },
+      "default_models": {
+        "title": "Set Default Models",
+        "description": "Choose default chat and embedding models"
+      },
+      "rag_collection": {
+        "title": "Create Knowledge Base",
+        "description": "Upload documents or web pages to build your knowledge base"
+      },
+      "agent_with_kb": {
+        "title": "Create Agent",
+        "description": "Create an AI Agent and link it to your knowledge base"
+      },
+      "first_chat": {
+        "title": "Start Chatting",
+        "description": "Send a message and experience AI-powered responses"
+      }
+    },
+    "tasks": {
+      "platformCreated": "Setup Platform",
+      "knowledgeBaseUploaded": "Upload Knowledge Base",
+      "agentCreated": "Create AI Agent and Link Knowledge Base",
+      "messageReceived": "Receive Message from Platform"
+    }
+  },
+  "ws": {
+    "error": {
+      "unknown": "Unknown error",
+      "success": "Success",
+      "authFail": "Authentication failed",
+      "subscriberNotExist": "Subscriber does not exist",
+      "inBlacklist": "User is in blacklist",
+      "channelNotExist": "Channel does not exist",
+      "userNotOnNode": "User not on node",
+      "senderOffline": "Sender is offline",
+      "msgKeyError": "Message key error",
+      "payloadDecodeError": "Payload decode failed",
+      "forwardSendPacketError": "Forward send packet failed",
+      "notAllowSend": "Not allowed to send",
+      "connectKick": "Connection kicked",
+      "notInWhitelist": "Not in whitelist",
+      "queryTokenError": "Query token failed",
+      "systemError": "System error",
+      "channelIDError": "Invalid channel ID",
+      "nodeMatchError": "Node matching error",
+      "nodeNotMatch": "Node not matched",
+      "ban": "Channel is banned",
+      "notSupportHeader": "Unsupported header",
+      "clientKeyIsEmpty": "Client key is empty",
+      "rateLimit": "Rate limit exceeded",
+      "notSupportChannelType": "Unsupported channel type",
+      "disband": "Channel disbanded",
+      "sendBan": "Sending is banned",
+      "sendFailed": "Failed to send message (error code: {{code}})"
+    }
+  }
+}

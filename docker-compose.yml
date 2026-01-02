@@ -1,0 +1,273 @@
+version: '3.8'
+
+services:
+  # ============================================
+  # Infrastructure Services
+  # ============================================
+  
+  # PostgreSQL Database (shared by all services)
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: captain-postgres
+    environment:
+      POSTGRES_DB: captain
+      POSTGRES_USER: captain
+      POSTGRES_PASSWORD: captain123
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U captain -d captain"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - captain-network
+    restart: unless-stopped
+
+  # Redis for caching and sessions
+  redis:
+    image: redis:7-alpine
+    container_name: captain-redis
+    command: redis-server --appendonly yes
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - captain-network
+    restart: unless-stopped
+
+  # WuKongIM - Instant Messaging Service
+  wukongim:
+    image: registry.cn-shanghai.aliyuncs.com/wukongim/wukongim:v2
+    container_name: captain-wukongim
+    ports:
+      - "5001:5001"   # API port
+      - "5100:5100"   # TCP port
+      - "5172:5172"   # Demo port
+      - "5200:5200"   # WebSocket port
+      - "5300:5300"   # Manager port
+    environment:
+      - WK_MODE=debug
+      - WK_TOKENAUTHON=false
+      - WK_EXTERNAL_IP=127.0.0.1
+    volumes:
+      - wukongim_data:/root/wukongim
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - captain-network
+    restart: unless-stopped
+
+  # ============================================
+  # Captain Services
+  # ============================================
+
+  # API Server - Main entry point
+  apiserver:
+    build:
+      context: ./apiserver
+      dockerfile: Dockerfile
+    container_name: captain-apiserver
+    ports:
+      - "8000:8000"
+    environment:
+      - GIN_MODE=debug
+      - DATABASE_URL=postgres://captain:captain123@postgres:5432/captain?sslmode=disable
+      - REDIS_URL=redis://redis:6379/0
+      - JWT_SECRET=captain-jwt-secret-change-in-production
+      - WUKONGIM_URL=http://wukongim:5001
+      - WUKONGIM_WS_URL=ws://127.0.0.1:5200
+      - AICENTER_URL=http://aicenter:8081
+      - RAG_SERVICE_URL=http://rag:8082
+      - PLATFORM_SERVICE_URL=http://platform:8083
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      wukongim:
+        condition: service_started
+    networks:
+      - captain-network
+    restart: unless-stopped
+
+  # AI Center - Agent/Team execution engine
+  aicenter:
+    build:
+      context: ./aicenter
+      dockerfile: Dockerfile
+    container_name: captain-aicenter
+    ports:
+      - "8081:8081"
+    environment:
+      - PORT=8081
+      - GIN_MODE=debug
+      - DATABASE_URL=postgres://captain:captain123@postgres:5432/captain?sslmode=disable
+      - REDIS_URL=redis://redis:6379/0
+      - RAG_SERVICE_URL=http://rag:8082
+      - INTERNAL_API_URL=http://apiserver:8000
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - captain-network
+    restart: unless-stopped
+
+  # RAG Service - Document processing and retrieval
+  rag:
+    build:
+      context: ./rag
+      dockerfile: Dockerfile
+    container_name: captain-rag
+    ports:
+      - "8082:8082"
+    environment:
+      - PORT=8082
+      - GIN_MODE=debug
+      - DATABASE_URL=postgres://captain:captain123@postgres:5432/captain?sslmode=disable
+      - REDIS_URL=redis://redis:6379/0
+      - STORAGE_PATH=/app/uploads
+      - OPENAI_API_KEY=sk-a6aaf8beba18425e9942c4a33ae58caf
+      - EMBEDDING_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1
+      - EMBEDDING_MODEL=text-embedding-v4
+      - EMBEDDING_DIMENSIONS=1536
+    volumes:
+      - rag_uploads:/app/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - captain-network
+    restart: unless-stopped
+
+  # Platform Service - Third-party platform integration
+  platform:
+    build:
+      context: ./platform
+      dockerfile: Dockerfile
+    container_name: captain-platform
+    ports:
+      - "8083:8083"
+    environment:
+      - GIN_MODE=debug
+      - DATABASE_URL=postgres://captain:captain123@postgres:5432/captain?sslmode=disable
+      - REDIS_URL=redis://redis:6379/0
+      - TGO_API_URL=http://apiserver:8000
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - captain-network
+    restart: unless-stopped
+
+  # ============================================
+  # Frontend
+  # ============================================
+
+  # TGO Web - React Frontend
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    container_name: captain-web
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000
+      - VITE_DEBUG_MODE=true
+      - VITE_DISABLE_WEBSOCKET_AUTO_CONNECT=false
+    depends_on:
+      - apiserver
+    networks:
+      - captain-network
+    restart: unless-stopped
+
+  # ============================================
+  # Admin Tools
+  # ============================================
+
+  # Adminer - Database admin UI
+  adminer:
+    image: adminer:latest
+    container_name: captain-adminer
+    ports:
+      - "8888:8080"
+    environment:
+      - ADMINER_DEFAULT_SERVER=postgres
+      - ADMINER_DESIGN=pepa-linha-dark
+      - ADMINER_PLUGINS=tables-filter tinymce
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - captain-network
+    restart: unless-stopped
+
+  # Redis Commander - Redis admin UI
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: captain-redis-commander
+    ports:
+      - "8889:8081"
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - captain-network
+    restart: unless-stopped
+
+  # Widget App - Visitor chat widget
+  widget:
+    build:
+      context: ./widget
+      args:
+        VITE_API_BASE_URL: http://localhost:8000
+    container_name: captain-widget
+    ports:
+      - "3001:80"
+    environment:
+      VITE_API_BASE_URL: http://localhost:8000
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:80/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - captain-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  wukongim_data:
+    driver: local
+  rag_uploads:
+    driver: local
+
+networks:
+  captain-network:
+    driver: bridge

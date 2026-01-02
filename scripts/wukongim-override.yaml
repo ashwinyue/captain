@@ -1,0 +1,16 @@
+# WuKongIM Override Configuration
+# This config overrides default settings to work with local development
+
+mode: "debug"
+rootDir: "./wukongimdata"
+
+# External IP configuration for client access
+external:
+  ip: "localhost"
+  # wsAddr: "ws://localhost:5200"
+
+# Disable token authentication for development
+tokenAuthOn: false
+
+# Disable manager token
+managerToken: ""
