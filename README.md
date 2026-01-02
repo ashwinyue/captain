@@ -1,11 +1,44 @@
-# Captain - TGO Microservices Platform (Go)
+# Captain - 智能客服平台 (Go)
 
-Captain 是 TGO 平台的 Go 语言重构版本，包含以下微服务：
+<p align="center">
+  <strong>基于 <a href="https://github.com/tgoai/tgo">TGO</a> 开源项目重构的 Go 语言版本</strong>
+</p>
 
-- **apiserver** - API 网关和用户管理服务 (端口 8000)
-- **aicenter** - AI Agent 执行引擎 (端口 8081)
-- **rag** - RAG 文档处理和检索服务 (端口 8082)
-- **platform** - 第三方平台集成服务 (端口 8083)
+<p align="center">
+  <a href="https://github.com/tgoai/tgo">
+    <img src="https://img.shields.io/badge/Based%20on-TGO-blue" alt="Based on TGO">
+  </a>
+  <a href="https://github.com/tgoai/tgo/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/License-Apache%202.0-green" alt="License">
+  </a>
+</p>
+
+## 关于
+
+Captain 是基于 [TGO](https://github.com/tgoai/tgo) 开源项目使用 Go 语言重构的智能客服平台。
+
+- 后端服务使用 **Go** 语言重写，采用 [eino](https://github.com/cloudwego/eino) ADK 框架
+- 前端界面复用 TGO 原项目的 **React** 前端（`web` 和 `widget`）
+
+### 核心特性
+
+- 🤖 **多 Agent 协作** - 支持 Parallel/Sequential/Hierarchical 工作流
+- 📚 **RAG 知识库** - 向量检索增强的智能问答
+- 💬 **流式输出** - 实时 SSE 流式响应
+- 👥 **人工转接** - AI 与人工客服无缝切换
+- 📱 **多平台集成** - 网站、微信公众号等
+- 🔌 **WuKongIM** - 高性能即时通讯
+
+## 项目架构
+
+| 服务 | 端口 | 说明 |
+|------|------|------|
+| **apiserver** | 8000 | API 网关、用户认证、流式代理 |
+| **aicenter** | 8081 | AI Agent 执行引擎 (eino ADK) |
+| **rag** | 8082 | RAG 文档处理和向量检索 |
+| **platform** | 8083 | 第三方平台集成 |
+| **web** | 3000 | 管理后台前端 (React) |
+| **widget** | 3001 | 访客聊天组件 (React) |
 
 ## 快速开始
 
@@ -33,21 +66,15 @@ docker-compose logs -f
 docker-compose down
 ```
 
-### 服务端口
+### 基础设施端口
 
 | 服务 | 端口 | 说明 |
 |------|------|------|
-| apiserver | 8000 | 主 API 服务 |
-| aicenter | 8081 | AI Agent 引擎 |
-| rag | 8082 | RAG 服务 |
-| platform | 8083 | 平台集成服务 |
 | postgres | 5432 | PostgreSQL 数据库 |
 | redis | 6379 | Redis 缓存 |
 | wukongim | 5001 | WuKongIM API |
 | wukongim | 5100 | WuKongIM TCP |
 | wukongim | 5200 | WuKongIM WebSocket |
-| adminer | 8888 | 数据库管理 UI |
-| redis-commander | 8889 | Redis 管理 UI |
 
 ### 健康检查
 
@@ -185,6 +212,16 @@ docker-compose down -v
 docker-compose up -d
 ```
 
+## 致谢
+
+本项目基于以下开源项目：
+
+- [TGO](https://github.com/tgoai/tgo) - 原始智能客服平台（前端代码复用）
+- [eino](https://github.com/cloudwego/eino) - 字节跳动 AI Agent 开发框架
+- [WuKongIM](https://github.com/WuKongIM/WuKongIM) - 高性能即时通讯服务
+
 ## License
 
 Apache License 2.0
+
+本项目遵循 [TGO 原项目](https://github.com/tgoai/tgo) 的 Apache 2.0 开源协议。
