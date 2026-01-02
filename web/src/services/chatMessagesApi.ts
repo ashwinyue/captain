@@ -109,9 +109,12 @@ class ChatMessagesApiService extends BaseApiService {
 
       while (true) {
         const { done, value } = await reader.read();
-        if (done) break;
-
-        buffer += decoder.decode(value, { stream: true });
+        
+        if (value) {
+          buffer += decoder.decode(value, { stream: true });
+        }
+        
+        // Process all complete lines in buffer
         const lines = buffer.split('\n');
         buffer = lines.pop() || '';
 
@@ -122,9 +125,12 @@ class ChatMessagesApiService extends BaseApiService {
               try {
                 const event = JSON.parse(jsonStr) as SSEEvent;
                 onEvent(event);
-                // Collect exit content as final response
+                // Collect exit content or last message content as final response
                 if (event.type === 'exit' && event.content) {
                   finalContent = event.content;
+                } else if (event.type === 'message' && event.content) {
+                  // Accumulate message content for final response
+                  finalContent += event.content;
                 }
               } catch (e) {
                 console.warn('Failed to parse SSE event:', jsonStr);
@@ -132,8 +138,14 @@ class ChatMessagesApiService extends BaseApiService {
             }
           }
         }
+        
+        if (done) {
+          console.log('🔌 SSE stream ended');
+          break;
+        }
       }
 
+      console.log('✅ Calling onComplete with finalContent length:', finalContent.length);
       onComplete?.(finalContent);
     } catch (error) {
       onError?.(error as Error);
