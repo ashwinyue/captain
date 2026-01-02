@@ -80,7 +80,7 @@ class ChatMessagesApiService extends BaseApiService {
     onComplete?: (finalContent: string) => void,
     onError?: (error: Error) => void
   ): Promise<void> {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('tgo-auth-token');
     // Use runtime config (window.ENV) with fallback to build-time config
     const baseUrl = (window as any).ENV?.VITE_API_BASE_URL || import.meta.env.VITE_API_BASE_URL || '';
     

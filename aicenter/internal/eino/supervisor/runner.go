@@ -92,6 +92,35 @@ func (r *Runner) Stream(ctx context.Context, cfg *SupervisorConfig, query string
 		if !ok {
 			break
 		}
+
+		// Handle streaming message output
+		if event.Output != nil && event.Output.MessageOutput != nil {
+			mo := event.Output.MessageOutput
+			if mo.IsStreaming && mo.MessageStream != nil {
+				// Read from stream and emit message events
+				for {
+					msg, err := mo.MessageStream.Recv()
+					if err != nil {
+						break // Stream ended
+					}
+					// Create a new event with the message content
+					streamEvent := &adk.AgentEvent{
+						AgentName: event.AgentName,
+						Output: &adk.AgentOutput{
+							MessageOutput: &adk.MessageVariant{
+								Message: msg,
+							},
+						},
+					}
+					if err := callback(streamEvent); err != nil {
+						return err
+					}
+				}
+				continue
+			}
+		}
+
+		// Forward non-streaming events directly
 		if err := callback(event); err != nil {
 			return err
 		}
